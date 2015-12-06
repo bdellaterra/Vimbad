@@ -2,7 +2,7 @@
 set nocompatible
 
 " Ensure Vim is running in a compatible environment.
-if !has('Unix')
+if !( has('Unix') || has('Win32') )
 	throw "This configuration is only intended for Unix or Windows systems."
 endif
 
@@ -17,7 +17,17 @@ endfunction
 let g:VimfilesDir = s:SetSlashes($HOME) . '.vim/'
 
 " Set directory where temporary files can be stored.
-let g:TmpDir = s:SetSlashes($TMP) . 'vim/'
+if has('Unix')
+	if exists('$TMPDIR') 
+		let g:TmpDir = s:SetSlashes($TMPDIR) . 'vim/'
+	else
+		let g:TmpDir = '/var/tmp/vim/'
+	endif
+elseif has('Windows') && exists('$TEMP') 
+	let g:TmpDir = s:SetSlashes($TEMP) . 'vim/'
+else
+	let g:TmpDir = './.vim/tmp/'
+end
 
 " Create directory if it doesn't exist.
 if !isdirectory(g:TmpDir)
