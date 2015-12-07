@@ -7,3 +7,6 @@
 [submodule "bundle/vim-conviction"]
 	path = bundle/vim-conviction
 	url = https://github.com/bdellaterra/vim-conviction.git
+[submodule "bundle/vim-greyman"]
+	path = bundle/vim-greyman
+	url = https://github.com/bdellaterra/vim-greyman.git
