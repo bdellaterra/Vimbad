@@ -6,6 +6,18 @@ if !( has('Unix') || has('Win32') )
 	throw "This configuration is only intended for Unix or Windows systems."
 endif
 
+
+" PATHOGEN
+
+" Use bundle directory for Pathogen itself.
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+" Have Pathogen manage bundled plugins.
+execute pathogen#infect()
+
+
+" PATHS
+
 " The convention is that all directory paths will end in a slash
 " and all slashes will be forward slashes. This is established by
 " the following function:
@@ -65,6 +77,9 @@ let g:UnixBinDir = '/bin/'
 " system PATH variable.
 let g:SysPathSep = ':'
 
+
+" GENERAL SETTINGS
+
 " Specify the mapleader for Vim mappings.
 let g:MapLeader = ','
 
@@ -119,12 +134,4 @@ set cmdheight=1
 
 " Set tabbing behavior.
 set tabstop=4
-
-" PATHOGEN
-
-" Add bundle directory to the runtimepath.
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-" Have Pathogen manage bundled plugins.
-execute pathogen#infect()
 
