@@ -2,7 +2,10 @@
 " FUGITIVE
 
 " Create help menu.
-call s:CreatePluginHelpMenu('fugitive', 'Fugitive: A Git wrapper so awesome, it should be illegal')
+call conviction#CreatePluginHelpMenuItem(
+						\ 'fugitive',
+						\ 'Fugitive: A Git wrapper so awesome, it should be illegal'
+						\ )
 
 " Here is a list of mappings for the Fugitive plugin:
 let s:FugitiveMaps = [
@@ -28,6 +31,6 @@ let s:FugitiveMaps = [
 
 " Create a mapping and menu item for each entry in the dictionary.
 for [rhs,lhs] in s:FugitiveMaps
-	call CreateMenuItem('&Git', rhs, '', '', [lhs], 'nvinoremenu')
+	call conviction#CreateMenuItem('&Git', rhs, '', '', [lhs], 'nvinoremenu')
 endfor
 
