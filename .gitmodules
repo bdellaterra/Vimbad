@@ -10,3 +10,6 @@
 [submodule "bundle/vim-greyman"]
 	path = bundle/vim-greyman
 	url = https://github.com/bdellaterra/vim-greyman.git
+[submodule "bundle/neocomplete.vim"]
+	path = bundle/neocomplete.vim
+	url = git@github.com:Shougo/neocomplete.vim.git
