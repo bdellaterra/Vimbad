@@ -13,3 +13,6 @@
 [submodule "bundle/neocomplete.vim"]
 	path = bundle/neocomplete.vim
 	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "bundle/gundo.vim"]
+	path = bundle/gundo.vim
+	url = git@github.com:sjl/gundo.vim.git
