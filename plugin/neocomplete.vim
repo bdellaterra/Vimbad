@@ -39,8 +39,8 @@ function! s:CRLinebreakOrConfirm()
 endfunction
 
 " <C-h> or <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-h> neocomplete#close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#close_popup()."\<C-h>"
 
 " Helper function to control tab behavior:
 function! s:TabIndentOrComplete()
