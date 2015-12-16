@@ -25,3 +25,6 @@
 [submodule "bundle/vimfiler.vim"]
 	path = bundle/vimfiler.vim
 	url = git@github.com:Shougo/vimfiler.vim.git
+[submodule "bundle/vim-winslow"]
+	path = bundle/vim-winslow
+	url = https://github.com/bdellaterra/vim-winslow.git
