@@ -64,16 +64,14 @@ inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : <SID>TabIndentOrComplete()
 " <S-Tab>: Navigate backward through list.
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" <Up> and <Down>: Navigate forward/backward through list.
-" if completion-menu is open. Otherwise, move cursor down but close the
-" completion-menu if it is triggered by the new cursor location.
-" (This prevents a shift of context where arrow-based buffer movement might
-" suddenly switch into menu selection movement.)
-inoremap <expr><Up>  pumvisible() ? "\<C-p>" : "\<Up>" . neocomplete#close_popup()
-inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>" . neocomplete#close_popup()
-
-" <Left> and <Right>: Same as normal except prevent
-" completion menu from showing as a result of cursor movement.
+" <Up> <Down> <Left> <Right>: Same as normal except prevent
+" completions from happening as a result of cursor movement.
+inoremap <expr><Up>   pumvisible()
+						\ ? neocomplete#close_popup() . "\<Up>"
+						\ : "\<Up>" . neocomplete#close_popup()
+inoremap <expr><Down>   pumvisible()
+						\ ? neocomplete#close_popup() . "\<Down>"
+						\ : "\<Down>" . neocomplete#close_popup()
 inoremap <expr><Left>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Left>"
 						\ : "\<Left>" . neocomplete#close_popup()
