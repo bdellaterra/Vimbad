@@ -28,3 +28,6 @@
 [submodule "bundle/vim-winslow"]
 	path = bundle/vim-winslow
 	url = https://github.com/bdellaterra/vim-winslow.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim
