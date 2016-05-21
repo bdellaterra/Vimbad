@@ -40,3 +40,6 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule "bundle/Align"]
+	path = bundle/Align
+	url = https://github.com/vim-scripts/Align
