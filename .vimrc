@@ -90,7 +90,7 @@ let g:SysPathSep = ':'
 " GENERAL SETTINGS
 
 " Specify the mapleader for Vim mappings.
-let g:MapLeader = ','
+let mapleader = ','
 
 " This loads some good default configurations written
 " by Bram Moolenaar. (Creator of Vim)
