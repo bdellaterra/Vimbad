@@ -6,13 +6,10 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
-" FUGITIVE
 
 " Create help menu.
-call conviction#CreatePluginHelpMenuItem(
-						\ 'fugitive',
-						\ 'Fugitive: A Git wrapper so awesome, it should be illegal'
-						\ )
+ANoremenu &Help.&Plugins 'Fugitive: A Git wrapper so awesome, it should be illegal' ''
+						\ :help fugitive<CR> 
 
 " Here is a list of mappings for the Fugitive plugin:
 let s:FugitiveMaps = [

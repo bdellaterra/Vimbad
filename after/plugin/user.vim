@@ -9,6 +9,9 @@
 " Set the colorscheme
 colorscheme greyman
 
+" set the font
+set guifont=Liberation\ Mono\ 14
+
 " USER MAPPINGS
 
 " <Leader>wd: Copy working directory to the clipboard

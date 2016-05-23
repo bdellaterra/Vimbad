@@ -6,10 +6,8 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
-" VIMFILER
-
-" Create help menu
-ANoremenumap &Help.&Plugins 'Vimfiler: A powerful file explorer' ''
+" Create help menu.
+ANoremenu &Help.&Plugins 'Vimfiler: A powerful file explorer' ''
 						\ :help vimfiler<CR> 
 
 " <leader>fb: Toggle File Browser

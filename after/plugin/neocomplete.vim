@@ -7,7 +7,7 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
-" Create NeoComplete help menu.
-ANoremenumap &Help.&Plugins 'NeoComplete: Next generation completion framework' ''
+" Create help menu.
+ANoremenu &Help.&Plugins 'oComplete: Next generation completion framework''
 						\ :help neocomplete<CR> 
 

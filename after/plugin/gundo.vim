@@ -6,8 +6,8 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
-" Create Gundo help menu.
-ANoremenumap &Help.&Plugins 'Gundo: Visualize your Vim undo tree' ''
+" Create help menu.
+ANoremenu &Help.&Plugins 'Gundo: Visualize your Vim undo tree' ''
 						\ :help gundo<CR> 
 
 " <Leader>ut: View undo-tree.
