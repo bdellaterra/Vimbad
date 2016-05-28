@@ -12,24 +12,44 @@ ANoremenu &Help.&Plugins 'Surround: Quoting/parenthesizing made simple' ''
 						\ :help surround<CR> 
 
 " Change Surroundings
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', "ds'", "Delete single quotes", '', "ds'", 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', 'ds"', "Delete double quotes", '', 'ds\"', 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', 'ds)', "Delete parenthesis", '', 'ds)', 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', 'ds>', "Delete angle brackets", '', 'ds>', 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', 'ds]', "Delete square brackets", '', 'ds]', 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Delete', 'ds}', "Delete curly brackets", '', 'ds}', 'nimenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.Single &Quotes', "cs'\"", 'Change single quotes to double quotes', '', "cs'\"", 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Double Quotes', "cs\"'", 'Change double quotes to single quotes', '', "cs\"'", 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Angle Brackets', 'cs>]', 'Change angle brackets to square brackets', '', 'cs>]', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Angle Brackets', 'cs>}', 'Change angle brackets to curly brackets', '', 'cs>}', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Square Brackets', 'cs]>', 'Change square brackets to angle brackets', '', 'cs]>', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Square Brackets', 'cs]}', 'Change square brackets to curly brackets', '', 'cs]}', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Curly Brackets', 'cs}>', 'Change curly brackets to angle brackets', '', 'cs}>', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Change.&Curly Brackets', 'cs}]', 'Change curly brackets to square brackets', '', 'cs}]', 'nmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', "S'", 'Enclose selection in single quotes', '', "S'", 'vmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', 'S"', 'Enclose selection in double quotes', '', 'S"', 'vmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', 'S)', 'Enclose selection in parenthesis', '', 'S)', 'vmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', 'S>', 'Enclose selection in angle brackets', '', 'S>', 'vmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', 'S)', 'Enclose selection in square brackets', '', 'S]', 'vmenu')
-call conviction#CreateMenuItem('&Edit.Surrounding&s.&Enclose', 'S}', 'Enclose selection in curly brackets', '', 'S}', 'vmenu')
+NVIOMenu &Edit.Surrounding&s.&Delete "Delete single quotes" "ds'"
+						\ ds'
+NVIOMenu &Edit.Surrounding&s.&Delete 'Delete double quotes' 'ds"'
+						\ ds"
+NVIOMenu &Edit.Surrounding&s.&Delete 'Delete parenthesis' 'ds)'
+						\ ds)
+NVIOMenu &Edit.Surrounding&s.&Delete 'Delete angle brackets' 'ds>'
+						\ ds>
+NVIOMenu &Edit.Surrounding&s.&Delete 'Delete square brackets' 'ds]'
+						\ ds]
+NVIOMenu &Edit.Surrounding&s.&Delete 'Delete curly brackets' 'ds}'
+						\ ds}
+NVIOMenu &Edit.Surrounding&s.&Change.Single\ &Quotes 'Change single quotes to double quotes' "cs'\""
+						\ cs'"
+NVIOMenu &Edit.Surrounding&s.&Change.&Double\ Quotes 'Change double quotes to single quotes' "cs\"'"
+						\ cs"'
+NVIOMenu &Edit.Surrounding&s.&Change.&Angle\ Brackets 'Change angle brackets to square brackets' 'cs>]'
+						\ cs>]
+NVIOMenu &Edit.Surrounding&s.&Change.&Angle\ Brackets 'Change angle brackets to curly brackets' 'cs>}'
+						\ cs>}
+NVIOMenu &Edit.Surrounding&s.&Change.&Square\ Brackets 'Change square brackets to angle brackets' 'cs]>'
+						\ cs]>
+NVIOMenu &Edit.Surrounding&s.&Change.&Square\ Brackets 'Change square brackets to curly brackets' 'cs]}'
+						\ cs]}
+NVIOMenu &Edit.Surrounding&s.&Change.&Curly\ Brackets 'Change curly brackets to angle brackets' 'cs}>'
+						\ cs}>
+NVIOMenu &Edit.Surrounding&s.&Change.&Curly\ Brackets 'Change curly brackets to square brackets' 'cs}]'
+						\ cs}]
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in single quotes' "S'"
+						\ S'
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in double quotes' 'S"'
+						\ S"
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in parenthesis' 'S)'
+						\ S)
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in angle brackets' 'S>'
+						\ S>
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in square brackets' 'S)'
+						\ S)
+NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in curly brackets' 'S}'
+						\ S}
 

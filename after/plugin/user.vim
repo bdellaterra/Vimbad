@@ -14,11 +14,17 @@ set guifont=Liberation\ Mono\ 14
 
 " USER MAPPINGS
 
+" call g:winslow#MapEasyModeSwitch()   " Enable persistent easy mode switch
+" Easy mode toggle
+exe "ANoremenu 10 &Help 'Toggle &Easy Mode' '"
+		\ . (exists('g:winslow#easyModeSwitch') ? g:winslow#easyModeSwitch : '')
+		\ . "' :silent! call winslow#ToggleEasyMode()<CR>"
+
 " <Leader>wd: Copy working directory to the clipboard
-Noremenumap <silent> &Extra 'Copy working directory to clipboard' '<Leader>wd'
+NVIONoremenumap <silent> &Extra 'Copy working directory to clipboard' '<Leader>wd'
 						\ :silent! let @+=fnamemodify(bufname(''),':p:h')<CR>
 
 " <Leader>hs: Toggle search pattern highlighting
-ANoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>hs'
+NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>hs'
 						\ :set hlsearch!<CR> 
 

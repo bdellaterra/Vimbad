@@ -6,7 +6,6 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
-
 " Create help menu.
 ANoremenu &Help.&Plugins 'Fugitive: A Git wrapper so awesome, it should be illegal' ''
 						\ :help fugitive<CR> 
@@ -35,6 +34,6 @@ let s:FugitiveMaps = [
 
 " Create a mapping and menu item for each entry in the dictionary.
 for [rhs,lhs] in s:FugitiveMaps
-	call conviction#CreateMenuItem('&Git', rhs, '', '', [lhs], 'nvinoremenu')
+	call conviction#CreateMenuItem('&Git', rhs, '', '', [lhs], 'nvionoremenu')
 endfor
 

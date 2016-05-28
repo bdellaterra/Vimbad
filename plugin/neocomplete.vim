@@ -6,6 +6,7 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 

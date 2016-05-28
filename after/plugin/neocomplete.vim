@@ -8,6 +8,6 @@
 
 
 " Create help menu.
-ANoremenu &Help.&Plugins 'oComplete: Next generation completion framework''
+ANoremenu &Help.&Plugins 'NeoComplete: Next generation completion framework' ''
 						\ :help neocomplete<CR> 
 

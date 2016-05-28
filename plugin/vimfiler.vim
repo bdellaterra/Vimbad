@@ -6,7 +6,6 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
-" VIMFILER
 
 " Use Vimfiler as the default file explorer.
 if !exists('g:vimfiler_as_default_explorer')
