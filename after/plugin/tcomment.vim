@@ -12,6 +12,8 @@ ANoremenu &Help.&Plugins 'TComment: An extensible & universal comment vim-plugin
 						\ :help tcomment.txt<CR> 
 
 " Comments
-NVOIMenu &Edit.Commen&ts 'Comment &Line' 'gcc'
+NOIMenu &Edit.Commen&ts 'Comment/Uncomment Current &Line' 'gcc'
 						\ gcc
+VMenu &Edit.Commen&ts 'Comment/Uncomment &Selection' 'gc'
+						\ gc
 
