@@ -11,3 +11,7 @@
 ANoremenu &Help.&Plugins 'Unite: Unite and create user interfaces' ''
 						\ :help unite<CR> 
 
+" <Leader>bb: Toggle buffer browser
+NVIONoremenumap 210 &File '&Buffer Browser' '<Leader>bb'
+						\ :Unite buffer<CR>
+
