@@ -11,6 +11,6 @@ ANoremenu &Help.&Plugins 'Gundo: Visualize your Vim undo tree' ''
 						\ :help gundo<CR> 
 
 " <Leader>ut: View undo-tree.
-NVIONoremenumap 333 &Edit 'Toggle Undo Tree' '<Leader>ut'
+NVIONoremenumap 333 &Edit '&Undo History' '<Leader>uh'
                         \ :GundoToggle<CR>
 
