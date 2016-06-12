@@ -15,14 +15,13 @@ ANoremenu &Help.&Plugins 'NeoComplete: Next generation completion framework' ''
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 
-" <Esc>: Escape from completion menu.
-inoremap <expr><Esc>     pumvisible() ? neocomplete#smart_close_popup() . "\<Esc>" : "\<Esc>"
-
-" <CR>: Close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>CRLinebreakOrConfirm()<CR>
-function! s:CRLinebreakOrConfirm()
-	return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+" <Esc>: Confirm selection and close menu
+inoremap <silent> <Esc> <C-r>=<SID>EscOrConfirm()<CR>
+function! s:EscOrConfirm()
+	return pumvisible() ? neocomplete#close_popup() : "\<Esc>"
 endfunction
+
+" <CR> Inserts a line-break normally
 
 " <C-h> or <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#close_popup()."\<C-h>"
@@ -43,7 +42,7 @@ inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : <SID>TabIndentOrComplete()
 " <S-Tab>: Navigate backward through list.
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" <Up> <Down> <Left> <Right>: Same as normal except prevent
+" <Up> <Down> and <Right>: Same as normal except prevent
 " completions from happening as a result of cursor movement.
 inoremap <expr><Up>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Up>"
@@ -51,9 +50,11 @@ inoremap <expr><Up>   pumvisible()
 inoremap <expr><Down>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Down>"
 						\ : "\<Down>" . neocomplete#close_popup()
-inoremap <expr><Left>   pumvisible()
-						\ ? neocomplete#close_popup() . "\<Left>"
-						\ : "\<Left>" . neocomplete#close_popup()
 inoremap <expr><Right>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Right>"
 						\ : "\<Right>" . neocomplete#close_popup()
+" <Left>: Abort selection if menu isvisible. Normal movement otherwise
+inoremap <expr><Left>     pumvisible()
+						\ ? neocomplete#smart_close_popup()
+						\ : "\<Left>" . neocomplete#close_popup()
+
