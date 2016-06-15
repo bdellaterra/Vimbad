@@ -12,6 +12,12 @@ colorscheme greyman
 " set the font
 set guifont=Liberation\ Mono\ 14
 
+" indent settings
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+
 " USER MAPPINGS
 
 " call g:winslow#MapEasyModeSwitch()   " Enable persistent easy mode switch
