@@ -83,3 +83,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-vexed"]
+	path = bundle/vim-vexed
+	url = git@bitbucket.org:bdellaterra/vim-vexed.git
+[submodule "bundle/vim-sleuth"]
+	path = bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
