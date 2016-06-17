@@ -10,12 +10,9 @@
 colorscheme greyman
 
 " set the font
-set guifont=Liberation\ Mono\ 14
-
-" indent settings
-set shiftwidth=4
-set tabstop=4
-set expandtab
+" set guifont=Liberation\ Mono\ 14
+set guifont=InconsolataForPowerline\ Nerd\ Font\ 16
+set encoding=utf8
 
 
 " USER MAPPINGS

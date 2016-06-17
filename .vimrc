@@ -16,15 +16,6 @@ if !( has('Unix') || has('Win32') )
 endif
 
 
-" PATHOGEN
-
-" Use bundle directory for Pathogen itself.
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-" Have Pathogen manage bundled plugins.
-execute pathogen#infect()
-
-
 " PATHS
 
 " The convention is that all directory paths will end in a slash
@@ -36,6 +27,15 @@ endfunction
 
 " This is the directory where custom Vim configurations are stored.
 let g:VimfilesDir = s:SetSlashes($HOME) . '.vim/'
+
+
+" Pathogen
+
+" Use bundle directory for Pathogen itself.
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+" Have Pathogen manage bundled plugins.
+call pathogen#infect()
 
 " Set directory where temporary files can be stored.
 if has('Unix')
@@ -142,5 +142,10 @@ set shortmess+=T
 set cmdheight=1
 
 " Set tabbing behavior.
+set shiftwidth=4
 set tabstop=4
+set expandtab
+
+" Always show status line
+set laststatus=2
 
