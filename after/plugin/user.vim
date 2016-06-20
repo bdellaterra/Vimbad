@@ -9,11 +9,13 @@
 " Set the colorscheme
 colorscheme greyman
 
-" set the font
+" Set the font
 " set guifont=Liberation\ Mono\ 14
 set guifont=InconsolataForPowerline\ Nerd\ Font\ 16
 set encoding=utf8
 
+" Faster updates
+set updatetime=1000
 
 " USER MAPPINGS
 

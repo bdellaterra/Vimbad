@@ -18,7 +18,7 @@ let s:FugitiveMaps = [
                         \ [ ':Gwrite!<CR>', '<leader>gw' ],
                         \ [ ':Gstatus<CR>', '<leader>gs' ],
                         \ [ ':Gcommit<CR>', '<leader>gc' ],
-                        \ [ ':Ggrep ', '<leader>gg' ],
+                        \ [ ':Ggrep ', '<leader>gf' ],
                         \ [ ':Glog<CR>', '<leader>gl' ],
                         \ [ ':Gedit ', '<leader>ge' ],
                         \ [ ':Gsplit ', '<leader>gsp' ],
