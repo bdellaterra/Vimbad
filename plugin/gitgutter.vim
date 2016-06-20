@@ -12,7 +12,7 @@ nmap <Leader>ghs <Plug>GitGutterStageHunk
 nmap <Leader>ghu <Plug>GitGutterUndoHunk
 nmap <Leader>ghu <Plug>GitGutterPreviewHunk
 
-" Ignore whitespace
+" Settings
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_override_sign_column_highlight = 0
