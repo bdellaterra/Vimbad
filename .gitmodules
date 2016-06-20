@@ -98,3 +98,30 @@
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "bundle/vim-anzu"]
+	path = bundle/vim-anzu
+	url = https://github.com/osyo-manga/vim-anzu.git
+[submodule "bundle/neoyank.vim"]
+	path = bundle/neoyank.vim
+	url = https://github.com/Shougo/neoyank.vim.git
+[submodule "bundle/unite-tag"]
+	path = bundle/unite-tag
+	url = https://github.com/tsukkee/unite-tag.git
+[submodule "bundle/unite-outline"]
+	path = bundle/unite-outline
+	url = https://github.com/Shougo/unite-outline.git
+[submodule "bundle/neoinclude.vim"]
+	path = bundle/neoinclude.vim
+	url = https://github.com/Shougo/neoinclude.vim.git
+[submodule "bundle/unite-quickfix"]
+	path = bundle/unite-quickfix
+	url = https://github.com/osyo-manga/unite-quickfix.git
+[submodule "bundle/unite-help"]
+	path = bundle/unite-help
+	url = https://github.com/Shougo/unite-help.git
+[submodule "bundle/unite-colorscheme"]
+	path = bundle/unite-colorscheme
+	url = https://github.com/ujihisa/unite-colorscheme.git
+[submodule "bundle/neomru.vim"]
+	path = bundle/neomru.vim
+	url = https://github.com/Shougo/neomru.vim.git
