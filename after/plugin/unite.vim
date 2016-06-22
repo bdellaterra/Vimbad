@@ -13,15 +13,27 @@ ANoremenu &Help.&Plugins 'Unite: Unite and create user interfaces' ''
 
 " <Leader>ur: Recent Files (via NeoMRU plugin)
 NVIONoremenumap 205 &File '&Recent Files' '<Leader>ur'
-         \ :Unite file_mru<CR>
+         \ :Unite -start-insert file_mru<CR>
 
 " <Leader>ud: Recent Directories (via NeoMRU plugin)
 NVIONoremenumap 206 &File 'Recent &Directories' '<Leader>ud'
-         \ :Unite -buffer-name=files -default-action=lcd neomru/directory<CR>
+         \ :Unite -start-insert -buffer-name=files -default-action=lcd neomru/directory<CR>
+
+" <Leader>uf: Files In Current Directory
+NVIONoremenumap 207 &File 'Files in &Current Directory' '<Leader>uf'
+         \ :Unite -start-insert file<CR>
+
+" <Leader>uu: Files Under Current Directory (recursive)
+NVIONoremenumap 208 &File 'Files &Under Current Directory (recursive)' '<Leader>uu'
+         \ :Unite -start-insert file_rec/async<CR>
+
+" <Leader>up: Files in Current Project
+NVIONoremenumap 208 &File 'Files in Current Project' '<Leader>up'
+         \ :UniteWithProjectDir -start-insert file_rec/async<CR>
 
 " <Leader>ub: Buffers
 NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
-         \ :Unite buffer<CR>
+         \ :Unite -start-insert buffer<CR>
 
 " <Leader>us: Lines Matching Last Search (via Anzu plugin)
 NVIONoremenumap 422 &Edit 'Lines Matching Last &Search' '<Leader>us'
@@ -29,7 +41,7 @@ NVIONoremenumap 422 &Edit 'Lines Matching Last &Search' '<Leader>us'
 
 " <Leader>ua: All Lines
 NVIONoremenumap 423 &Edit 'All &Lines' '<Leader>ul'
-         \ :Unite line:all<CR>
+         \ :Unite -start-insert line:all<CR>
 
 " <Leader>uy: Yank History (via Unite-Yank plugin)
 NVIONoremenumap 364 &Edit 'Paste from &Yank History' '<Leader>uy'
@@ -62,13 +74,4 @@ NVIONoremenumap 10 &Help '&Search Help' '<Leader>uh'
 " <Leader>uc: Colorscheme (via Unite-Colorscheme plugin)
 NVIONoremenumap 10 &Edit.Color\ Scheme '&Browse All' '<Leader>uc'
          \ :Unite -no-quit -keep-focus -direction=botright colorscheme<CR>
-
-" Speedup
-if executable('ag')
-   let g:unite_source_rec_async_command =
-            \ ['ag', '--nocolor', '--nogroup',
-            \  '--depth', '10', '-g', '']
-   " ag is quite fast, so we increase this number
-   let g:unite_source_rec_min_cache_files = 1200
-endif
 
