@@ -11,6 +11,10 @@
 call unite#custom#source('file,file/new,buffer,file_rec',
             \ 'matchers', 'matcher_fuzzy')
 
+" Pressing down from insert-mode seems to skip first line
+" unless this is disabled
+let g:unite_enable_auto_select=0
+
 " Speedup
 if executable('ag')
    let g:unite_source_rec_async_command =
