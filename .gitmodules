@@ -134,3 +134,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/vim-skeletons"]
+	path = bundle/vim-skeletons
+	url = https://github.com/pgilad/vim-skeletons
