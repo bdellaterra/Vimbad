@@ -137,3 +137,6 @@
 [submodule "bundle/vim-skeletons"]
 	path = bundle/vim-skeletons
 	url = https://github.com/pgilad/vim-skeletons
+[submodule "bundle/vim-localvimrc"]
+	path = bundle/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc
