@@ -1,4 +1,4 @@
-" File:			.vimrc
+" File:			vimrc
 " Description:	Brian Dellaterra's Personal Vim Configuration
 " Author:		Brian Dellatera <github.com/bdellaterra>
 " Version:		0.1.1
@@ -6,6 +6,8 @@
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
+" NOTE: A custom vimrc in the $HOME directory should source this one.
+"       (See :help vimrc and :help source)
 
 " Don't try to be compatible with Vim's ancestor Vi
 set nocompatible
@@ -25,8 +27,14 @@ function s:SetSlashes(path)
 	return substitute(a:path, '[^/\\]\@<=$\|\\', '/', 'g')
 endfunction
 
-" This is the directory where custom Vim configurations are stored.
-let g:VimfilesDir = s:SetSlashes($HOME) . '.vim/'
+" Directory where Vim configuration is stored.
+if !exists('g:VimfilesDir') 
+	if has('Unix')
+		let g:VimfilesDir = s:SetSlashes($HOME) . '.vim/'
+	elseif has('Windows')
+		let g:VimfilesDir = s:SetSlashes($HOME) . 'vimfiles/'
+	endif
+endif
 
 
 " Pathogen
@@ -38,49 +46,55 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 " Set directory where temporary files can be stored.
-if has('Unix')
-	if exists('$TMPDIR') 
-		let g:TmpDir = s:SetSlashes($TMPDIR) . 'vim/'
+if !exists('g:TmpDir') 
+	if has('Unix')
+		if exists('$TMPDIR') 
+			let g:TmpDir = s:SetSlashes($TMPDIR) . 'vim/'
+		else
+			let g:TmpDir = '/var/tmp/vim/'
+		endif
+	elseif has('Windows') && exists('$TEMP') 
+		let g:TmpDir = s:SetSlashes($TEMP) . 'vim/'
 	else
-		let g:TmpDir = '/var/tmp/vim/'
+		let g:TmpDir = './.vim/tmp/'
 	endif
-elseif has('Windows') && exists('$TEMP') 
-	let g:TmpDir = s:SetSlashes($TEMP) . 'vim/'
-else
-	let g:TmpDir = './.vim/tmp/'
-end
-
-" Create directory if it doesn't exist.
-if !isdirectory(g:TmpDir)
-	try | call mkdir(g:TmpDir) | endtry
+	" Create directory if it doesn't exist.
+	if !isdirectory(g:TmpDir)
+		try | call mkdir(g:TmpDir) | endtry
+	endif
 endif
 
 " Set directory where backup files are stored.
-let g:BackupDir = g:TmpDir . 'backup/'
-
-" Create directory if it doesn't exist.
-if !isdirectory(g:BackupDir)
-	try | call mkdir(g:BackupDir) | endtry
+if !exists('g:BackupDir') 
+	let g:BackupDir = g:TmpDir . 'backup/'
+	" Create directory if it doesn't exist.
+	if !isdirectory(g:BackupDir)
+		try | call mkdir(g:BackupDir) | endtry
+	endif
 endif
 
 " Set directory where swap files are stored.
-let g:SwapDir = g:TmpDir . 'swap/'
-
-" Create directory if it doesn't exist
-if !isdirectory(g:SwapDir)
-	try | call mkdir(g:SwapDir) | endtry
+if !exists('g:SwapDir') 
+	let g:SwapDir = g:TmpDir . 'swap/'
+	" Create directory if it doesn't exist
+	if !isdirectory(g:SwapDir)
+		try | call mkdir(g:SwapDir) | endtry
+	endif
 endif
 
 " Set directory where persistent undo files can be stored.
-let g:UndoDir = g:TmpDir . 'undo/'
-
-" Create directory if it doesn't exist.
-if !isdirectory(g:UndoDir)
-	try | call mkdir(g:UndoDir) | endtry
+if !exists('g:UndoDir') 
+	let g:UndoDir = g:TmpDir . 'undo/'
+	" Create directory if it doesn't exist.
+	if !isdirectory(g:UndoDir)
+		try | call mkdir(g:UndoDir) | endtry
+	endif
 endif
 
 " Specify path where Unix executables can be found.
-let g:UnixBinDir = '/bin/'
+if !exists('g:UnixBinDir') 
+	let g:UnixBinDir = '/bin/'
+endif
 
 " Specify delimiter used to separate multiple entries in the
 " system PATH variable.
@@ -88,6 +102,8 @@ let g:SysPathSep = ':'
 
 
 " GENERAL SETTINGS
+
+" NOTE: These can be overridden in an "after" directory, (See :help after)
 
 " Specify the mapleader for Vim mappings.
 let mapleader = ','
