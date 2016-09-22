@@ -1,0 +1,34 @@
+" File:         .lvimrc
+" Description:  Local project settings for Vimbad
+" Author:       Brian Dellaterra <github.com/bdellaterra>
+" Version:      0.1.1
+" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+"               Distributed under the terms of the GNU Lesser General Public License.
+"               See the file LICENSE or <http://www.gnu.org/licenses/>.
+
+
+" Guard against repeat sourcing of this script
+if exists('g:loaded_vimbad_lvimrc')
+    finish
+endif
+let g:loaded_vimbad_lvimrc = 1
+
+" Initialize local dictionary if it doesn't exist
+if !exists('g:local')
+    let g:local = {}
+endif
+
+" Set local data
+let g:local.author         = "Brian Dellaterra"
+let g:local.email          = "bdellaterra@voodooglobe.com"
+let g:local.github_user    = "bdellaterra"
+let g:local.project_name   = "Vimbad"
+let g:local.project_slug   = "vimbad"
+let g:local.package_slug   = "vimbad"
+let g:local.project_brief  = "Brian Dellaterra's Personal Vim Configuration"
+let g:local.version        = "0.1.1"
+let g:local.year           = "2015"
+let g:local.license_name   = "GNU Lesser General Public License v3"
+let g:local.license_brief  = "Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>."
+
+

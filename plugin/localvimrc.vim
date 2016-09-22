@@ -16,4 +16,8 @@ let g:localvimrc_sandbox = 1
 " Persistently save decisions on which local rc files are sourced
 let g:localvimrc_persistent = 1
 
+" Load local vimrc files on BufNewFile and BufRead events
+" (In time to define variables for use in filetype skeletons)
+let g:localvimrc_event = [ 'BufNewFile', 'BufRead' ]
+
 
