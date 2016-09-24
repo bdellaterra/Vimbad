@@ -11,9 +11,13 @@
 let g:UltiSnipsSnippetsDir = '~/.snippets/vim'
 
 " Define triggers
-let g:UltiSnipsExpandTrigger        =  "<tab>"
-let g:UltiSnipsListSnippets         =  "<c-tab>"
-let g:UltiSnipsJumpForwardTrigger   =  "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger  =  "<c-k>"
+let g:UltiSnipsExpandTrigger        =  "<S-Enter>"
+let g:UltiSnipsListSnippets         =  "<C-Enter>"
+
+" Undefine triggers
+" NOTE: These are combo-mapped to <Tab> and <S-Tab> in after/neocomplete.vim
+let g:UltiSnipsJumpForwardTrigger = "<nop>"
+let g:UltiSnipsJumpBackwardTrigger = "<nop>"
+let g:UltiSnipsMappingsToIgnore = ["JumpTabOrComplete", "JumpBackSTabOrComplete"]
 
 

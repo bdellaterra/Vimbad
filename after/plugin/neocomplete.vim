@@ -27,20 +27,49 @@ endfunction
 inoremap <expr><C-h> neocomplete#close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#close_popup()."\<C-h>"
 
+" NOTE: See plugin/ultisnips.vim for related forward/back jump configurations
+
 " Helper function to control tab behavior:
-function! s:TabIndentOrComplete()
-	if col('.')==1 || search('^\t*\%#','cn')
-		return "\<Tab>"
-	else
-		return neocomplete#start_manual_complete()
+" completion - optional boolean, enables completion if true (default)
+function! s:JumpTabOrComplete(...)
+	let completion = get(a:000, 0, 1)
+	call UltiSnips#JumpForwards()
+	if g:ulti_jump_forwards_res == 0
+		if pumvisible() == 1
+			return "\<C-n>"
+		else
+			if col('.')==1 || search('^\t*\%#','cn') || !completion
+				return "\<Tab>"
+			else
+				return neocomplete#start_manual_complete()
+			endif
+		endif
 	endif
+	return ""
 endfunction
 
-" <Tab>: Navigate forward through list, initate completion, or insert tab at start-of-line.
-inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : <SID>TabIndentOrComplete()
+" Helper function to control shift-tab behavior:
+function! s:JumpBackSTabOrComplete()
+	call UltiSnips#JumpBackwards()
+	if g:ulti_jump_backwards_res == 0
+		if pumvisible() == 1
+			return "\<C-p>"
+		else
+			return "\<S-Tab>"
+		endif
+	endif
+	return ""
+endfunction
 
-" <S-Tab>: Navigate backward through list.
-inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" <Tab>: Navigate forward through list, jump to next snippet location,
+"        initate completion, or insert tab(s) at start-of-line.
+inoremap <expr><Tab>  <SID>JumpTabOrComplete()
+snoremap <Tab> <Esc>:call <SID>JumpTabOrComplete(0)<CR>
+
+" <S-Tab>: Navigate backward through list, jump to previous snippet location,
+"          or insert tab(s) at start-of-line.
+inoremap <expr><S-Tab>  <SID>JumpBackSTabOrComplete()
+snoremap <S-Tab>  <Esc>:call <SID>JumpBackSTabOrComplete()<CR>
 
 " <Up> <Down> and <Right>: Same as normal except prevent
 " completions from happening as a result of cursor movement.
@@ -57,4 +86,5 @@ inoremap <expr><Right>   pumvisible()
 inoremap <expr><Left>     pumvisible()
 						\ ? neocomplete#smart_close_popup()
 						\ : "\<Left>" . neocomplete#close_popup()
+
 
