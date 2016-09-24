@@ -7,10 +7,9 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
-" TODO: Uncomment this once there is a help doc for Speedy
-" " Create help menu.
-" ANoremenu &Help.&Plugins 'Speedy: Fast characterwise, linewise, and blockwise mouse selections' ''
-" 						\ :help speedy<CR> 
+" Create help menu.
+ANoremenu &Help.&Plugins 'Speedy: Fast characterwise, linewise, and blockwise mouse selections' ''
+						\ :help speedy<CR> 
 
 " <Tab>: Cycle through visual selection modes
 VMenu 403 &Edit 'Cycle &Visual Selection Modes' '<Tab>'

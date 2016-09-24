@@ -7,6 +7,10 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
+" Create help menu.
+ANoremenu &Help.&Plugins 'Skeletons: Quickly scaffold template files using UltiSnips templates' ''
+         \ :help vim-skeletons<CR>     " No Help Available
+
 " Set directory where skeletons are stored
 let skeletons#skeletonsDir += ["~/.skeletons/vim"]
 
