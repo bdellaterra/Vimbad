@@ -71,7 +71,7 @@ snoremap <Tab> <Esc>:call <SID>JumpTabOrComplete(0)<CR>
 inoremap <expr><S-Tab>  <SID>JumpBackSTabOrComplete()
 snoremap <S-Tab>  <Esc>:call <SID>JumpBackSTabOrComplete()<CR>
 
-" <Up> <Down> and <Right>: Same as normal except prevent
+" <Up> <Down> <Left> and <Right>: Same as normal except prevent
 " completions from happening as a result of cursor movement.
 inoremap <expr><Up>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Up>"
@@ -82,9 +82,7 @@ inoremap <expr><Down>   pumvisible()
 inoremap <expr><Right>   pumvisible()
 						\ ? neocomplete#close_popup() . "\<Right>"
 						\ : "\<Right>" . neocomplete#close_popup()
-" <Left>: Abort selection if menu isvisible. Normal movement otherwise
-inoremap <expr><Left>     pumvisible()
-						\ ? neocomplete#smart_close_popup()
+inoremap <expr><Left>   pumvisible()
+						\ ? neocomplete#close_popup() . "\<Left>"
 						\ : "\<Left>" . neocomplete#close_popup()
-
 
