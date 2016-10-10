@@ -15,5 +15,8 @@ nmap <Leader>ghu <Plug>GitGutterPreviewHunk
 " Settings
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
-let g:gitgutter_override_sign_column_highlight = 0
+" let g:gitgutter_override_sign_column_highlight = 0
+
+" Awkwardly fix glitchy Sign Column after switching colorschemes
+autocmd BufReadPost * highlight clear SignColumn
 
