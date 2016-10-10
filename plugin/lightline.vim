@@ -9,6 +9,9 @@
 " Always show status line
 set laststatus=2
 
+" Awkwardly fix glitchy Status Line after switching colorschemes
+autocmd FileType * call lightline#colorscheme()
+
 " LightLine Configuration
 let g:lightline = {
       \ 'colorscheme': 'wombat',
