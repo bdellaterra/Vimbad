@@ -146,3 +146,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
+[submodule "bundle/vim-colorscheme-switcher"]
+	path = bundle/vim-colorscheme-switcher
+	url = https://github.com/xolox/vim-colorscheme-switcher
