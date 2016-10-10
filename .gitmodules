@@ -149,3 +149,6 @@
 [submodule "bundle/vim-colorscheme-switcher"]
 	path = bundle/vim-colorscheme-switcher
 	url = https://github.com/xolox/vim-colorscheme-switcher
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = git@github.com:xolox/vim-misc.git
