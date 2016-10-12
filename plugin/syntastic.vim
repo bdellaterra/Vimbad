@@ -40,8 +40,8 @@ highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
 " From: https://www.npmjs.com/package/eslint_d
-" let g:syntastic_javascript_eslint_exec = 'eslint_d'
-let g:syntastic_javascript_eslint_exec = 'eslint'
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+" let g:syntastic_javascript_eslint_exec = 'eslint'
 
 " Use Tidy with HTML5 (https://github.com/htacg/tidy-html5/tree/master/README)
 let g:syntastic_html_checkers = ['tidy']
