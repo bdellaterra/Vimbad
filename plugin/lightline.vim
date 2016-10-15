@@ -10,7 +10,7 @@
 set laststatus=2
 
 " Awkwardly fix glitchy Status Line after switching colorschemes
-autocmd FileType * call lightline#colorscheme()
+autocmd BufReadPost * call lightline#colorscheme()
 
 " LightLine Configuration
 let g:lightline = {
