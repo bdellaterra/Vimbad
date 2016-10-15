@@ -71,7 +71,7 @@ NVIONoremenumap 364 &Tools '&Location List' '<Leader>ul'
 NVIONoremenumap 10 &Help '&Search Help' '<Leader>uh'
          \ :Unite help<CR>
 
-" <Leader>uc: Colorscheme (via Unite-Colorscheme plugin)
-NVIONoremenumap 10 &Edit.Color\ Scheme '&Browse All' '<Leader>uc'
+" <Leader>ucs: Colorscheme (via Unite-Colorscheme plugin)
+NVIONoremenumap 10 &Edit.Color\ Scheme '&Browse All' '<Leader>ucs'
          \ :Unite -no-quit -keep-focus -direction=botright colorscheme<CR>
 
