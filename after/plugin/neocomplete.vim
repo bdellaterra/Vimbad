@@ -38,7 +38,7 @@ function! s:JumpTabOrComplete(...)
 		if pumvisible() == 1
 			return "\<C-n>"
 		else
-			if col('.')==1 || search('^\t*\%#','cn') || !completion
+			if col('.')==1 || search('^\%(\s\|\t\)*\%#','cn') || !completion
 				return "\<Tab>"
 			else
 				return neocomplete#start_manual_complete()
