@@ -7,11 +7,11 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 " Set the colorscheme
-colorscheme greyman
+" colorscheme greyman
 
 " Set the font
 " set guifont=Liberation\ Mono\ 14
-set guifont=InconsolataForPowerline\ Nerd\ Font\ 16
+" set guifont=InconsolataForPowerline\ Nerd\ Font\ 16
 set encoding=utf8
 
 " Faster updates
