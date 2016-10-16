@@ -10,3 +10,19 @@
 ANoremenu &Help.&Plugins 'UltiSnips: The ultimate snippet solution for Vim' ''
          \ :help ultisnips<CR>
 
+" If snippet fails to expand, try first candidate from completion menu.
+" When you just want the first candidate this saves keystrokes of selecting it.
+let g:ulti_expand_res = 0
+function! s:Expand()
+    call UltiSnips#ExpandSnippet()
+    return g:ulti_expand_res
+endfunction
+function! s:NextCandidate()
+    return "\<C-n>"
+endfunction
+" Closing/Opening popup menu ensures consistent behavior whether popup menu
+" was open or not. Checking g:ulti_expand_res to avoid double expansion.
+exe "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-r>=<SID>Expand()?'':neocomplete#close_popup().neocomplete#start_manual_complete().<SID>NextCandidate().neocomplete#close_popup()\<CR><C-r>=g:ulti_expand_res?'':UltiSnips#ExpandSnippet()\<CR>"
+
+
+
