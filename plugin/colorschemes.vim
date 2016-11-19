@@ -26,7 +26,6 @@ autocmd FileType,ColorScheme * call FixColorScheme()
 autocmd BufWinEnter * exe "normal \<C-l>"
 
 function! DynamicColorScheme( opt, ... )
-    let g:x = a:opt
   " Set Defaults
   let colorscheme = exists('g:colors_name') ? g:colors_name : 'default'
   let options = {
