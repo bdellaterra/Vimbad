@@ -1,180 +1,184 @@
 [submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = http://github.com/tpope/vim-pathogen.git
-	ignore = dirty
+    path = bundle/vim-pathogen
+    url = http://github.com/tpope/vim-pathogen.git
+    ignore = dirty
 [submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = http://github.com/tpope/vim-fugitive.git
-	ignore = dirty
+    path = bundle/vim-fugitive
+    url = http://github.com/tpope/vim-fugitive.git
+    ignore = dirty
 [submodule "bundle/vim-conviction"]
-	path = bundle/vim-conviction
-	url = https://github.com/bdellaterra/vim-conviction.git
-	ignore = dirty
+    path = bundle/vim-conviction
+    url = https://github.com/bdellaterra/vim-conviction.git
+    ignore = dirty
 [submodule "bundle/vim-greyman"]
-	path = bundle/vim-greyman
-	url = https://github.com/bdellaterra/vim-greyman.git
-	ignore = dirty
+    path = bundle/vim-greyman
+    url = https://github.com/bdellaterra/vim-greyman.git
+    ignore = dirty
 [submodule "bundle/neocomplete.vim"]
-	path = bundle/neocomplete.vim
-	url = git@github.com:Shougo/neocomplete.vim.git
-	ignore = dirty
+    path = bundle/neocomplete.vim
+    url = git@github.com:Shougo/neocomplete.vim.git
+    ignore = dirty
 [submodule "bundle/gundo.vim"]
-	path = bundle/gundo.vim
-	url = git@github.com:sjl/gundo.vim.git
-	ignore = dirty
+    path = bundle/gundo.vim
+    url = git@github.com:sjl/gundo.vim.git
+    ignore = dirty
 [submodule "bundle/vim-colorschemes"]
-	path = bundle/vim-colorschemes
-	url = git@github.com:flazz/vim-colorschemes.git
-	ignore = dirty
+    path = bundle/vim-colorschemes
+    url = git@github.com:flazz/vim-colorschemes.git
+    ignore = dirty
 [submodule "bundle/unite.vim"]
-	path = bundle/unite.vim
-	url = git@github.com:Shougo/unite.vim.git
-	ignore = dirty
+    path = bundle/unite.vim
+    url = git@github.com:Shougo/unite.vim.git
+    ignore = dirty
 [submodule "bundle/vimfiler.vim"]
-	path = bundle/vimfiler.vim
-	url = git@github.com:Shougo/vimfiler.vim.git
-	ignore = dirty
+    path = bundle/vimfiler.vim
+    url = git@github.com:Shougo/vimfiler.vim.git
+    ignore = dirty
 [submodule "bundle/vim-winslow"]
-	path = bundle/vim-winslow
-	url = https://github.com/bdellaterra/vim-winslow.git
-	ignore = dirty
+    path = bundle/vim-winslow
+    url = https://github.com/bdellaterra/vim-winslow.git
+    ignore = dirty
 [submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim
-	ignore = dirty
+    path = bundle/taglist.vim
+    url = https://github.com/vim-scripts/taglist.vim
+    ignore = dirty
 [submodule "bundle/vim-polyglot"]
-	path = bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-	ignore = dirty
+    path = bundle/vim-polyglot
+    url = https://github.com/sheerun/vim-polyglot
+    ignore = dirty
 [submodule "bundle/targets.vim"]
-	path = bundle/targets.vim
-	url = https://github.com/wellle/targets.vim
-	ignore = dirty
+    path = bundle/targets.vim
+    url = https://github.com/wellle/targets.vim
+    ignore = dirty
 [submodule "bundle/Align"]
-	path = bundle/Align
-	url = https://github.com/vim-scripts/Align
-	ignore = dirty
+    path = bundle/Align
+    url = https://github.com/vim-scripts/Align
+    ignore = dirty
 [submodule "bundle/vim-exchange"]
-	path = bundle/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange
-	ignore = dirty
+    path = bundle/vim-exchange
+    url = https://github.com/tommcdo/vim-exchange
+    ignore = dirty
 [submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-	ignore = dirty
+    path = bundle/vim-surround
+    url = https://github.com/tpope/vim-surround
+    ignore = dirty
 [submodule "bundle/matchit.zip"]
-	path = bundle/matchit.zip
-	url = https://github.com/vim-scripts/matchit.zip.git
-	ignore = dirty
+    path = bundle/matchit.zip
+    url = https://github.com/vim-scripts/matchit.zip.git
+    ignore = dirty
 [submodule "bundle/vim-multiple-cursors"]
-	path = bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
-	ignore = dirty
+    path = bundle/vim-multiple-cursors
+    url = https://github.com/terryma/vim-multiple-cursors.git
+    ignore = dirty
 [submodule "bundle/vim-speedy"]
-	path = bundle/vim-speedy
-	url = git@github.com:bdellaterra/vim-speedy.git
+    path = bundle/vim-speedy
+    url = git@github.com:bdellaterra/vim-speedy.git
     ignore = dirty
 [submodule "bundle/tcomment_vim"]
-	path = bundle/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim.git
+    path = bundle/tcomment_vim
+    url = https://github.com/tomtom/tcomment_vim.git
     ignore = dirty
 [submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+    path = bundle/syntastic
+    url = https://github.com/scrooloose/syntastic.git
     ignore = dirty
 [submodule "bundle/vim-vexed"]
-	path = bundle/vim-vexed
-	url = git@bitbucket.org:bdellaterra/vim-vexed.git
+    path = bundle/vim-vexed
+    url = git@bitbucket.org:bdellaterra/vim-vexed.git
     ignore = dirty
 [submodule "bundle/vim-sleuth"]
-	path = bundle/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth
+    path = bundle/vim-sleuth
+    url = https://github.com/tpope/vim-sleuth
     ignore = dirty
 [submodule "bundle/vim-devicons"]
-	path = bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
+    path = bundle/vim-devicons
+    url = https://github.com/ryanoasis/vim-devicons
     ignore = dirty
 [submodule "bundle/lightline.vim"]
-	path = bundle/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
+    path = bundle/lightline.vim
+    url = https://github.com/itchyny/lightline.vim
     ignore = dirty
 [submodule "bundle/vimproc.vim"]
-	path = bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
+    path = bundle/vimproc.vim
+    url = https://github.com/Shougo/vimproc.vim.git
     ignore = dirty
 [submodule "bundle/vim-anzu"]
-	path = bundle/vim-anzu
-	url = https://github.com/osyo-manga/vim-anzu.git
+    path = bundle/vim-anzu
+    url = https://github.com/osyo-manga/vim-anzu.git
     ignore = dirty
 [submodule "bundle/neoyank.vim"]
-	path = bundle/neoyank.vim
-	url = https://github.com/Shougo/neoyank.vim.git
+    path = bundle/neoyank.vim
+    url = https://github.com/Shougo/neoyank.vim.git
     ignore = dirty
 [submodule "bundle/unite-tag"]
-	path = bundle/unite-tag
-	url = https://github.com/tsukkee/unite-tag.git
+    path = bundle/unite-tag
+    url = https://github.com/tsukkee/unite-tag.git
     ignore = dirty
 [submodule "bundle/unite-outline"]
-	path = bundle/unite-outline
-	url = https://github.com/Shougo/unite-outline.git
+    path = bundle/unite-outline
+    url = https://github.com/Shougo/unite-outline.git
     ignore = dirty
 [submodule "bundle/neoinclude.vim"]
-	path = bundle/neoinclude.vim
-	url = https://github.com/Shougo/neoinclude.vim.git
+    path = bundle/neoinclude.vim
+    url = https://github.com/Shougo/neoinclude.vim.git
     ignore = dirty
 [submodule "bundle/unite-quickfix"]
-	path = bundle/unite-quickfix
-	url = https://github.com/osyo-manga/unite-quickfix.git
+    path = bundle/unite-quickfix
+    url = https://github.com/osyo-manga/unite-quickfix.git
     ignore = dirty
 [submodule "bundle/unite-help"]
-	path = bundle/unite-help
-	url = https://github.com/Shougo/unite-help.git
+    path = bundle/unite-help
+    url = https://github.com/Shougo/unite-help.git
     ignore = dirty
 [submodule "bundle/unite-colorscheme"]
-	path = bundle/unite-colorscheme
-	url = https://github.com/ujihisa/unite-colorscheme.git
+    path = bundle/unite-colorscheme
+    url = https://github.com/ujihisa/unite-colorscheme.git
     ignore = dirty
 [submodule "bundle/neomru.vim"]
-	path = bundle/neomru.vim
-	url = https://github.com/Shougo/neomru.vim.git
+    path = bundle/neomru.vim
+    url = https://github.com/Shougo/neomru.vim.git
     ignore = dirty
 [submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
+    path = bundle/vim-gitgutter
+    url = https://github.com/airblade/vim-gitgutter.git
     ignore = dirty
 [submodule "bundle/gitv"]
-	path = bundle/gitv
-	url = https://github.com/gregsexton/gitv.git
+    path = bundle/gitv
+    url = https://github.com/gregsexton/gitv.git
     ignore = dirty
 [submodule "bundle/delimitMate"]
-	path = bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
+    path = bundle/delimitMate
+    url = https://github.com/Raimondi/delimitMate.git
     ignore = dirty
 [submodule "bundle/vim-skeletons"]
-	path = bundle/vim-skeletons
-	url = https://github.com/pgilad/vim-skeletons
+    path = bundle/vim-skeletons
+    url = https://github.com/pgilad/vim-skeletons
     ignore = dirty
 [submodule "bundle/vim-localvimrc"]
-	path = bundle/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc
+    path = bundle/vim-localvimrc
+    url = https://github.com/embear/vim-localvimrc
     ignore = dirty
 [submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
+    path = bundle/ultisnips
+    url = https://github.com/SirVer/ultisnips
     ignore = dirty
 [submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets
+    path = bundle/vim-snippets
+    url = https://github.com/honza/vim-snippets
     ignore = dirty
 [submodule "bundle/vim-colorscheme-switcher"]
-	path = bundle/vim-colorscheme-switcher
-	url = https://github.com/xolox/vim-colorscheme-switcher
+    path = bundle/vim-colorscheme-switcher
+    url = https://github.com/xolox/vim-colorscheme-switcher
     ignore = dirty
 [submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
-	url = git@github.com:xolox/vim-misc.git
+    path = bundle/vim-misc
+    url = git@github.com:xolox/vim-misc.git
     ignore = dirty
 [submodule "bundle/xml.vim"]
-	path = bundle/xml.vim
-	url = https://github.com/othree/xml.vim
+    path = bundle/xml.vim
+    url = https://github.com/othree/xml.vim
+    ignore = dirty
+[submodule "bundle/colorizer"]
+    path = bundle/colorizer
+    url = https://github.com/lilydjwg/colorizer.git
     ignore = dirty
