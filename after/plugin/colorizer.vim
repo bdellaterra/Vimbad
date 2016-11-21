@@ -7,10 +7,10 @@
 
 
 " Visual CSS Colors
-NVIONoremenumap &Edit.&Color\ Codes.&Colorizer '&Toggle Colors' '<leader>tc'
+NVIONoremenumap &Edit.&Color\ Scheme.&Color\ Codes '&Toggle Colors' '<leader>tc'
 						\ :ColorToggle<CR>
-NVIONoremenumap &Edit.&Color\ Codes.&Colorizer '&Enable Colors' '<leader>ec'
-						\ :ColorHighlight()<CR>
-NVIONoremenumap &Edit.&Color\ Codes.&Colorizer '&Disable Colors' '<leader>dc'
+NVIONoremenumap &Edit.&Color\ Scheme.&Color\ Codes '&Enable Colors' '<leader>ec'
+						\ :ColorHighlight<CR>
+NVIONoremenumap &Edit.&Color\ Scheme.&Color\ Codes '&Disable Colors' '<leader>dc'
 						\ :ColorClear<CR>
 

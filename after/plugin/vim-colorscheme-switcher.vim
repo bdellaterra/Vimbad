@@ -6,15 +6,16 @@
 "               Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
-" <Leader>csn: Next Colorscheme
-NVIONoremenumap 10 &Edit.Color\ Scheme '&Next' '<Leader>csn'
+" <Leader>nc: Next Colorscheme
+NVIONoremenumap 10 &Edit.Color\ Scheme '&Next' '<Leader>nc'
          \ :silent! NextColorScheme<CR>
 
-" <Leader>csp: Previous Colorscheme
-NVIONoremenumap 10 &Edit.Color\ Scheme '&Previous' '<Leader>csp'
+" <Leader>bc: Previous Colorscheme
+NVIONoremenumap 10 &Edit.Color\ Scheme '&Back' '<Leader>bc'
          \ :silent! PrevColorScheme<CR>
 
-" <Leader>csr: Random Colorscheme
-NVIONoremenumap 10 &Edit.Color\ Scheme '&Random' '<Leader>csr'
+" <Leader>rc: Random Colorscheme
+NVIONoremenumap 10 &Edit.Color\ Scheme '&Random' '<Leader>rc'
          \ :silent! RandomColorScheme<CR>
+
 
