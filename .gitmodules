@@ -152,3 +152,6 @@
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = git@github.com:xolox/vim-misc.git
+[submodule "bundle/xml.vim"]
+	path = bundle/xml.vim
+	url = https://github.com/othree/xml.vim
