@@ -1,10 +1,10 @@
 [submodule "bundle/vim-pathogen"]
     path = bundle/vim-pathogen
-    url = http://github.com/tpope/vim-pathogen.git
+    url = https://github.com/tpope/vim-pathogen.git
     ignore = dirty
 [submodule "bundle/vim-fugitive"]
     path = bundle/vim-fugitive
-    url = http://github.com/tpope/vim-fugitive.git
+    url = https://github.com/tpope/vim-fugitive.git
     ignore = dirty
 [submodule "bundle/vim-conviction"]
     path = bundle/vim-conviction
@@ -16,23 +16,23 @@
     ignore = dirty
 [submodule "bundle/neocomplete.vim"]
     path = bundle/neocomplete.vim
-    url = git@github.com:Shougo/neocomplete.vim.git
+    url = https://github.com/Shougo/neocomplete.vim.git
     ignore = dirty
 [submodule "bundle/gundo.vim"]
     path = bundle/gundo.vim
-    url = git@github.com:sjl/gundo.vim.git
+    url = https://github.com/sjl/gundo.vim.git
     ignore = dirty
 [submodule "bundle/vim-colorschemes"]
     path = bundle/vim-colorschemes
-    url = git@github.com:flazz/vim-colorschemes.git
+    url = https://github.com/flazz/vim-colorschemes.git
     ignore = dirty
 [submodule "bundle/unite.vim"]
     path = bundle/unite.vim
-    url = git@github.com:Shougo/unite.vim.git
+    url = https://github.com/Shougo/unite.vim.git
     ignore = dirty
 [submodule "bundle/vimfiler.vim"]
     path = bundle/vimfiler.vim
-    url = git@github.com:Shougo/vimfiler.vim.git
+    url = https://github.com/Shougo/vimfiler.vim.git
     ignore = dirty
 [submodule "bundle/vim-winslow"]
     path = bundle/vim-winslow
@@ -72,7 +72,7 @@
     ignore = dirty
 [submodule "bundle/vim-speedy"]
     path = bundle/vim-speedy
-    url = git@github.com:bdellaterra/vim-speedy.git
+    url = https://github.com/bdellaterra/vim-speedy.git
     ignore = dirty
 [submodule "bundle/tcomment_vim"]
     path = bundle/tcomment_vim
@@ -172,7 +172,7 @@
     ignore = dirty
 [submodule "bundle/vim-misc"]
     path = bundle/vim-misc
-    url = git@github.com:xolox/vim-misc.git
+    url = https://github.com/xolox/vim-misc.git
     ignore = dirty
 [submodule "bundle/xml.vim"]
     path = bundle/xml.vim
