@@ -18,7 +18,7 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <Esc>: Abort selection and close menu
 inoremap <silent> <Esc> <C-r>=<SID>EscOrConfirm()<CR>
 function! s:EscOrConfirm()
-	return pumvisible() ? neocomplete#close_popup() : "\<Esc>"
+	return pumvisible() ? neocomplete#close_popup() . "\<Esc>" : "\<Esc>"
 endfunction
 
 " <CR> Inserts a line-break normally
