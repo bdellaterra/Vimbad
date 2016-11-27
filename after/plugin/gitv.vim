@@ -11,11 +11,8 @@ ANoremenu &Help.&Plugins 'GitV: Enhanced Git Repo Viewer' ''
          \ :help gitv<CR> 
 
 " GitV Menus
-NVIONoremenumap &Git.Git&V 'Browse &All File Logs' '<leader>ga'
+NVIONoremenumap &Git.Git&V 'Browse All Files Log-&History' '<leader>gh'
          \ :Gitv<CR>
 NVIONoremenumap &Git.Git&V 'Browse Logs for &This File Only' '<leader>gt'
          \ :Gitv!<CR>
-
-" Use GitV log display as default
-NVIOMap <leader>gl <leader>ga
 
