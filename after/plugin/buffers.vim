@@ -40,6 +40,10 @@ endif
 " Function to delay buffer menu changes until Vim is done with initial setup
 " (Some mappings defined above)
 function s:SetBufferMenu()
+    " <Leader><Delete>b: Delete Buffer
+    aunmenu Buffers.Delete
+    Noremenu 6 &Buffers '&Delete' '<Leader><Delete>b'
+             \ :<C-u>confirm bdelete<CR>
     " <Ctrl-^>: Alternate Buffer
     aunmenu Buffers.Alternate
     Noremenu 8 &Buffers '&Alternate' '0=\ or\ Ctrl-^'
