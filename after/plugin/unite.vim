@@ -7,6 +7,11 @@
 "               See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
+" Customize buffer listing to show and sort by buffer number
+call unite#custom#source('buffer', 'converters', 'converter_buf_tail_num')
+let g:unite_source_buffer_time_format = ''
+
+
 " Create help menu.
 ANoremenu &Help.&Plugins 'Unite: Unite and create user interfaces' ''
          \ :help unite<CR> 
