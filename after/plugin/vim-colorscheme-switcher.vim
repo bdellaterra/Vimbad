@@ -18,4 +18,7 @@ NVIONoremenumap 10 &Edit.Color\ Scheme '&Back' '<Leader>bc'
 NVIONoremenumap 10 &Edit.Color\ Scheme '&Random' '<Leader>rc'
          \ :silent! RandomColorScheme<CR>
 
+" <Leader>fc: Refresh Colorscheme
+NVIONoremenumap 11 &Edit.Color\ Scheme 'Re&fresh' '<Leader>fc'
+         \ :silent! call RefreshColorscheme()<CR>
 

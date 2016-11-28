@@ -169,7 +169,7 @@ function! GetDefaultCS()
           \ ? get(default_opts, 'term16_dark', 'ron') 
           \ : get(default_opts, 'term16_light', 'default')
   endif
-  
+  return default_cs
 endfunction
 
 function! DetermineColorScheme()
