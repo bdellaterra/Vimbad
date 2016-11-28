@@ -102,69 +102,80 @@ endfunction
 
 endif  " }}}
 
-" Switch back to default colorscheme then run new colorscheme
-" (Helps avoid glitchy behavior when switching through colorschemes)
-function! FixColorScheme()
-  if g:colors_name != 'default'
-    colorscheme default
-    exe 'colorscheme ' . g:colors_name
-  endif
+function! GetDefaultFiletype()
+  return exists('g:local.default_filetype') ? g:local.default_filetype : 'text'
 endfunction
 
 " Establish default filetype for files where none is detected
-let g:local.default_filetype = exists('g:local.default_filetype')
-      \ ? g:local.default_filetype
-      \ : 'text'
-function! DefaultFiletype()
-  let ft = exists('b:did_filetype') ? b:did_filetype : g:local.default_filetype
-  if exists('b:did_filetype') ||
-        \ (expand('%:e') == '' && &buftype == '' &&  &filetype == '')
-    exe 'setfiletype ' . ft
-    exe 'set syntax=' . &filetype
-    let b:did_filetype = &filetype
+function! SetDefaultFiletype()
+  if expand('%:e') == '' && &buftype == '' &&  &filetype == ''
+    exe 'setfiletype ' . GetDefaultFiletype()
   endif
 endfunction
 
-autocmd BufNewFile,BufEnter * call DefaultFiletype()
-autocmd FileType * call SetColorScheme()
-autocmd ColorScheme * call FixColorScheme()
-autocmd BufWinEnter * exe "normal \<C-l>"
-autocmd BufLeave * let g:last_colorscheme = len(g:cs) - 1
+function! RefreshColorscheme()
+  if &filetype != ''
+    exe 'setfiletype ' . &filetype
+  else
+    call SetDefaultFiletype()
+  endif
+  exe "normal \<C-l>"
+endfunction
+
+autocmd BufNewFile,BufEnter * call SetDefaultFiletype()
+autocmd FileType * call SetColorScheme(DetermineColorScheme())
+autocmd ColorScheme * call SetColorScheme()
+autocmd BufWinEnter * call RefreshColorscheme()
 
 " Build a hierarchy of colorscheme preferences based on
 " filetype-specific configurations
 function! DynamicColorScheme( opt, ... )
-  let index = get(g:, 'last_colorscheme', -1)
   let g:cs = exists('g:cs') ? g:cs : []
+  let b:filetypes = exists('b:filetypes') ? b:filetypes : []
+  let b:filetypes += [&filetype]
   if type(a:opt) == type({})
     let g:cs += [a:opt]
-  else
-    let g:cs = g:cs[0:index]
+  elseif type(a:opt) == type(0)
+    let g:last_cs = g:cs[-len(b:filetypes)-1]
+    let g:cs += [ g:last_cs ]
   endif
+  let g:cs[-1]['&ft'] = &ft
 endfunction
 
-function! SetColorScheme()
-  " Set Defaults
+let s:default_opts = {
+      \ 'gui_dark': 'ron',
+      \ 'gui_light': 'default',
+      \ 'term_dark': 'ron',
+      \ 'term_light': 'default',
+      \ 'term16_dark': 'ron',
+      \ 'term16_light': 'default',
+      \ }
+function! GetDefaultOpts()
+  return deepcopy(s:default_opts)
+endfunction
+
+function! GetBG()
   let bg_var = 'g:local.background_pref'  " Set in vimrc to establish preference
-  let bg = get( a:000, 0, exists(bg_var) ? eval(bg_var) : &background )
-  let default_opts = {
-        \ 'gui_dark': 'ron',
-        \ 'gui_light': 'default',
-        \ 'term_dark': 'ron',
-        \ 'term_light': 'default',
-        \ 'term16_dark': 'ron',
-        \ 'term16_light': 'default',
-        \ }
+  return get( a:000, 0, exists(bg_var) ? eval(bg_var) : &background )
+endfunction
+
+function! GetDefaultCS()
+  let default_opts = GetDefaultOpts()
   if exists('g:local.default_colorscheme')
     let default_cs = g:local.default_colorscheme
   else
     let default_cs =
-          \ bg == 'dark'
-          \ ? default_opts['term16_dark'] 
-          \ : default_opts['term16_light']
+          \ GetBG() == 'dark'
+          \ ? get(default_opts, 'term16_dark', 'ron') 
+          \ : get(default_opts, 'term16_light', 'default')
   endif
+  
+endfunction
+
+function! DetermineColorScheme()
+  let default_cs = GetDefaultCS()
   " Consolidate colorscheme preferences across filetype hierarchy
-  let opts = default_opts
+  let opts = GetDefaultOpts()
   for i in g:cs
     call extend(opts, i, 'force')
   endfor
@@ -180,8 +191,17 @@ function! SetColorScheme()
     endif
     " Set designated colorscheme if it exists in options
     " and editing a normal buffer (not help, quickfix, etc.)
-    let cs = get( opts, prefix . '_' . bg, default_cs )
-    if &buftype == '' && cs != g:colors_name
+    let cs = get( opts, prefix . '_' . GetBG(), default_cs )
+  endif
+  return cs
+endfunction
+
+function! SetColorScheme(...)
+  let default_cs = get(g:, 'colors_name', GetDefaultCS())
+  let cs = get(a:000, 0, default_cs)
+  if &buftype == '' && cs != g:colors_name
+    colorscheme default
+    if cs != 'default'
       exe 'colorscheme ' . cs
     endif
   endif
