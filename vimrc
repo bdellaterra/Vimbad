@@ -129,7 +129,7 @@ set autowrite
 
 " Keep swap/backup/undo files from cluttering the working directory.
 " NOTE: Adding an extra slash because '//' at the end creates
-" unique filenames built from the full file path.
+" unique filenames built from the full file path. (See :help directory)
 exe 'set backupdir=' . g:BackupDir . '/'
 exe 'set directory=' . g:SwapDir . '/'
 exe 'set undodir='   . g:UndoDir . '/'

@@ -8,6 +8,7 @@
 let s:debug = 0
 if s:debug  " {{{
 
+" Log events to troubleshoot how multiple colorschemes/filetypes resolve
 augroup EventLogging
   autocmd BufNewFile * call s:Log('BufNewFile')
   autocmd BufReadPre * call s:Log('BufReadPre')
@@ -101,6 +102,8 @@ function! s:Log(eventName) abort
 endfunction
 
 endif  " }}}
+
+" FIXME: Encapsulate global functions
 
 function! GetDefaultFiletype()
   return exists('g:local.default_filetype') ? g:local.default_filetype : 'text'

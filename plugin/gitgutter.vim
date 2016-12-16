@@ -7,6 +7,11 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
+" Non-default Mappings (All Git commands start with 'g' for consistentcy)
+nmap <Leader>ggs <Plug>GitGutterStageHunk
+nmap <Leader>ggu <Plug>GitGutterUndoHunk
+nmap <Leader>ggp <Plug>GitGutterPreviewHunk
+
 " Settings
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
