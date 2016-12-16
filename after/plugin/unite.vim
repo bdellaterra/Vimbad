@@ -72,8 +72,8 @@ NVIONoremenumap 362 &Tools '&QuickFix' '<Leader>uq'
 NVIONoremenumap 364 &Tools '&Location List' '<Leader>ul'
          \ :Unite location_list<CR>
 
-" <Leader>uh: Help (via Unite-Help plugin)
-NVIONoremenumap 10 &Help '&Search Help' '<Leader>uh'
+" <Leader>u<F1>: Help (via Unite-Help plugin)
+NVIONoremenumap 10 &Help '&Search Help' '<Leader>u<F1>'
          \ :Unite help<CR>
 
 " <Leader>ucs: Colorscheme (via Unite-Colorscheme plugin)
