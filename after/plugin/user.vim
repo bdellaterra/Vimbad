@@ -19,6 +19,10 @@ set updatetime=1000
 
 " USER MAPPINGS
 
+" <Leader>ht: Rebuild help tags
+NVIONoremenumap 10 &Help 'Rebuild Help &tag index' '<Leader>ht'
+						\ :Helptags<CR> 
+
 " call g:winslow#MapEasyModeSwitch()   " Enable persistent easy mode switch
 " Easy mode toggle
 exe "ANoremenu 10 &Help 'Toggle &Easy Mode' '"
@@ -33,3 +37,6 @@ NVIONoremenumap <silent> &Extra 'Copy working directory to clipboard' '<Leader>w
 NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>hs'
 						\ :set hlsearch!<CR> 
 
+" Make VimProc dll file
+NVIONoremenu &Extra 'Make &VimProc dll file' ''
+						\ :VimProcInstall<CR> 
