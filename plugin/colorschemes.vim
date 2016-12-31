@@ -177,6 +177,7 @@ endfunction
 
 function! DetermineColorScheme()
   let default_cs = GetDefaultCS()
+  let g:cs = exists('g:cs') ? g:cs : []
   " Consolidate colorscheme preferences across filetype hierarchy
   let opts = GetDefaultOpts()
   for i in g:cs
@@ -193,7 +194,7 @@ function! DetermineColorScheme()
       let prefix = 'term'
     endif
     " Set designated colorscheme if it exists in options
-    " and editing a normal buffer (not help, quickfix, etc.)
+    " FIXME: and editing a normal buffer (not help, quickfix, etc.)
     let cs = get( opts, prefix . '_' . GetBG(), default_cs )
   endif
   return cs
