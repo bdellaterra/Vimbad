@@ -186,3 +186,7 @@
     path = bundle/codi.vim
     url = https://github.com/metakirby5/codi.vim
     ignore = dirty
+[submodule "bundle/asyncrun.vim"]
+    path = bundle/asyncrun.vim
+    url = https://github.com/skywind3000/asyncrun.vim
+    ignore = dirty
