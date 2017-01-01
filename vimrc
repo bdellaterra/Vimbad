@@ -165,3 +165,6 @@ set expandtab
 " Always show status line
 set laststatus=2
 
+" Don't show the toolbar/icons
+set guioptions-=T
+
