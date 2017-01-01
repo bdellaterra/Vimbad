@@ -182,3 +182,7 @@
     path = bundle/vim-multiple-cursors
     url = https://github.com/terryma/vim-multiple-cursors
     ignore = dirty
+[submodule "bundle/codi.vim"]
+    path = bundle/codi.vim
+    url = https://github.com/metakirby5/codi.vim
+    ignore = dirty
