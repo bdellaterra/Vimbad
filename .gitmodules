@@ -190,3 +190,6 @@
     path = bundle/asyncrun.vim
     url = https://github.com/skywind3000/asyncrun.vim
     ignore = dirty
+[submodule "bundle/hdevtools"]
+	path = bundle/hdevtools
+	url = https://github.com/hdevtools/hdevtools/

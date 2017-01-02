@@ -37,6 +37,19 @@ else
   call <SID>SetBufferMenu()
 endif
 
+" TODO: Make these non-global
+"
+" Next Buffer helper function
+function BN( ... )
+  let c = get(a:000, 0, '')
+  exe "confirm bnext " . (c > 0 ? c : '')
+endfunction
+" Previous Buffer helper function
+function BP( ... )
+  let c = get(a:000, 0, '')
+  exe "confirm bprev " . (c > 0 ? c : '')
+endfunction
+
 " Function to delay buffer menu changes until Vim is done with initial setup
 " (Some mappings defined above)
 function s:SetBufferMenu()
@@ -48,14 +61,14 @@ function s:SetBufferMenu()
     aunmenu Buffers.Alternate
     Noremenu 8 &Buffers '&Alternate' '0=\ or\ Ctrl-^'
              \ :<C-u>confirm buffer #<CR>
-    " <Leader>nb: Next Buffer
+    " gb: Next Buffer
     aunmenu Buffers.Next
-    NVIONoremenumap 8 &Buffers '&Next' '<Leader>nb'
-             \ :<C-u>exe "confirm bnext " . (v:count > 0 ? v:count : '')<CR>
-    " <Leader>bb: Previous Buffer
+    NVIONoremenumap &Buffers '&Next' 'gb'
+             \ :<C-u>call BN(v:count)<CR>
+    " gB: Previous Buffer
     aunmenu Buffers.Previous
-    NVIONoremenumap 8 &Buffers '&Previous' '<Leader>bb'
-             \ :<C-u>exe "confirm bprev " . (v:count > 0 ? v:count : '')<CR>
+    NVIONoremenumap &Buffers '&Previous' 'gB'
+             \ :<C-u>call BP(v:count)<CR>
     " <count>=: Select Buffer
     Noremenu 8 &Buffers '&Select' '<count>=\ or\ <count>Ctrl-^' =
 endfunction
