@@ -12,6 +12,11 @@ set laststatus=2
 " Awkwardly fix glitchy Status Line after switching colorschemes
 autocmd FileType * call lightline#colorscheme()
 
+function! VimbadLightLineFilename()
+  let fname = LightLineFilename()
+  return fname == '' ? '' : '(' . bufnr('') . ') ' .  LightLineFilename()
+endfunction
+
 " LightLine Configuration
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -21,7 +26,7 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
-      \   'filename': 'LightLineFilename',
+      \   'filename': 'VimbadLightLineFilename',
       \   'fileformat': 'LightLineFileformat',
       \   'filetype': 'LightLineFiletype',
       \   'fileencoding': 'LightLineFileencoding',
