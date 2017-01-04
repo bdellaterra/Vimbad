@@ -178,10 +178,6 @@
     path = bundle/colorizer
     url = https://github.com/lilydjwg/colorizer.git
     ignore = dirty
-[submodule "bundle/vim-multiple-cursors"]
-    path = bundle/vim-multiple-cursors
-    url = https://github.com/terryma/vim-multiple-cursors
-    ignore = dirty
 [submodule "bundle/codi.vim"]
     path = bundle/codi.vim
     url = https://github.com/metakirby5/codi.vim
