@@ -203,10 +203,12 @@ endfunction
 function! SetColorScheme(...)
   let default_cs = get(g:, 'colors_name', GetDefaultCS())
   let cs = get(a:000, 0, default_cs)
-  if &buftype == '' && cs != g:colors_name
-    colorscheme default
-    if cs != 'default'
-      exe 'colorscheme ' . cs
+  if expand('%') !~ '^fugitive\|gitv'  " problematic plugin buffers
+    if &buftype == '' && cs != g:colors_name
+      colorscheme default
+      if cs != 'default'
+        exe 'colorscheme ' . cs
+      endif
     endif
   endif
 endfunction
