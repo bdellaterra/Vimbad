@@ -33,8 +33,8 @@ exe "ANoremenu 10 &Help 'Toggle &Easy Mode' '"
 NVIONoremenumap <silent> &Extra 'Copy working directory to clipboard' '<Leader>wd'
 						\ :silent! let @+=fnamemodify(bufname(''),':p:h')<CR>
 
-" <Leader>hs: Toggle search pattern highlighting
-NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>hs'
+" <Leader>ht: Toggle search pattern highlighting
+NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>th'
 						\ :set hlsearch!<CR> 
 
 " Make VimProc dll file
