@@ -40,16 +40,16 @@ NVIOMenu &Edit.Surrounding&s.&Change.&Curly\ Brackets 'Change curly brackets to 
 						\ cs}>
 NVIOMenu &Edit.Surrounding&s.&Change.&Curly\ Brackets 'Change curly brackets to square brackets' 'cs}]'
 						\ cs}]
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in single quotes' "S'"
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in single quotes' "S'"
 						\ S'
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in double quotes' 'S"'
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in double quotes' 'S"'
 						\ S"
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in parenthesis' 'S)'
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in parenthesis' 'S)'
 						\ S)
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in angle brackets' 'S>'
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in angle brackets' 'S>'
 						\ S>
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in square brackets' 'S)'
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in square brackets' 'S)'
 						\ S)
-NVIOMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in curly brackets' 'S}'
+VMenu &Edit.Surrounding&s.&Enclose 'Enclose selection in curly brackets' 'S}'
 						\ S}
 
