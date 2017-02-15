@@ -17,10 +17,16 @@ let g:unite_enable_auto_select=0
 
 " Speedup
 if executable('ag')
-   let g:unite_source_rec_async_command =
-            \ ['ag', '--nocolor', '--nogroup',
-            \  '--depth', '10', '-g', '']
-   " ag is quite fast, so we increase this number
-   let g:unite_source_rec_min_cache_files = 1200
+   let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
+   let g:unite_source_grep_command = 'ag'
+   let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
+   let g:unite_source_grep_recursive_opt=''
+   if has('Windows')
+      let g:unite_source_rec_async_command =
+               \ ['ag', '--nocolor', '--nogroup',
+               \  '--depth', '10', '-g', '']
+      " ag is quite fast, so we increase this number
+      let g:unite_source_rec_min_cache_files = 1200
+   endif
 endif
 
