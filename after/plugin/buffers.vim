@@ -27,15 +27,8 @@ noremap 0=  :<C-u>confirm buffer #<CR>  " Vim won't pass zero-counts to mappings
 
 " (The following borrows from menu.vim in the Vim distribution...)
 
-
 " When just starting Vim, load the buffer menu later
 if has("vim_starting")
-  " Fix placement of separator
-  " Note: LoadBufferMenu is defined in menu.vim in vim runtime directory
-  augroup LoadBufferMenu
-    aunmenu Buffers.-Sep-
-  augroup END
-  " Customize buffer menu
   augroup UserLoadBufferMenu
     au! VimEnter * call <SID>SetBufferMenu()
     au  VimEnter * au! UserLoadBufferMenu
@@ -43,7 +36,6 @@ if has("vim_starting")
 else
   call <SID>SetBufferMenu()
 endif
-
 
 " TODO: Make these non-global
 "
@@ -71,11 +63,11 @@ function s:SetBufferMenu()
              \ :<C-u>confirm buffer #<CR>
     " gb: Next Buffer
     aunmenu Buffers.Next
-    NVNoremenumap 6 &Buffers '&Next' 'gb'
+    NVNoremenumap 1 &Buffers '&Next' 'gb'
              \ :<C-u>call BN(v:count)<CR>
     " gB: Previous Buffer
     aunmenu Buffers.Previous
-    NVNoremenumap 7 &Buffers '&Previous' 'gB'
+    NVNoremenumap 1 &Buffers '&Previous' 'gB'
              \ :<C-u>call BP(v:count)<CR>
     " <count>=: Select Buffer
     Noremenu 8 &Buffers '&Select' '<count>=\ or\ <count>Ctrl-^' =
