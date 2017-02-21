@@ -124,8 +124,8 @@ set display=lastline
 " Use undo-persistence.
 set undofile
 
-" Auto-save when changing buffers.
-set autowrite
+" Auto-save when opening/changing buffers.
+set autowriteall
 
 " Keep swap/backup/undo files from cluttering the working directory.
 " NOTE: Adding an extra slash because '//' at the end creates
