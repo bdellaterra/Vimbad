@@ -7,6 +7,9 @@
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
+" Disable this script (Replacing with Ale)
+finish
+
 " Create help menu.
 ANoremenu &Help.&Plugins 'Syntastic: Syntax checking hacks for vim' ''
 						\ :help syntastic<CR> 

@@ -191,8 +191,10 @@
     url = https://github.com/hdevtools/hdevtools/
     ignore = dirty
 [submodule "bundle/vim-multiple-cursors"]
-	path = bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors
+    path = bundle/vim-multiple-cursors
+    url = https://github.com/terryma/vim-multiple-cursors
+    ignore = dirty
 [submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
+    path = bundle/ale
+    url = https://github.com/w0rp/ale.git
+    ignore = dirty
