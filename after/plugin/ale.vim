@@ -9,10 +9,15 @@
 ANoremenu &Help.&Plugins 'ALE: Asynchronous Lint Engine' ''
 						\ :help ale<CR> 
 
-" <leader>l = Next lint warning/error
-Noremenumap 402 &Tools 'Next &Linter Error' mapleader . 'l'
-      \ <Plug>(ale_next_wrap)
-" <leader>L = Previous lint warning/error
-Noremenumap 402 &Tools 'Previous &Linter Error' mapleader . 'L'
-      \ <Plug>(ale_previous_wrap)
+" Map movement through errors without wrapping.
+nmap <silent> <Leader>l <Plug>(ale_next_wrap)
+nmap <silent> <Leader>L <Plug>(ale_previous_wrap)
+
+" <Leader>l = Next lint warning/error
+NVNoremenumap 510 &Extra 'Next &Linter Error' '<Leader>l'
+      \ :ALENextWrap<CR>
+"
+" <Leader>L = Previous lint warning/error
+NVNoremenumap 510 &Extra 'Previous &Linter Error' '<Leader>L'
+      \ :ALEPreviousWrap<CR>
 
