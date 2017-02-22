@@ -63,11 +63,15 @@ function s:SetBufferMenu()
              \ :<C-u>confirm buffer #<CR>
     " gb: Next Buffer
     aunmenu Buffers.Next
-    NVNoremenumap 1 &Buffers '&Next' 'gb'
+    NVMap gb :<C-u>call BN(v:count)<CR>
+    NVMap <Tab> gb
+    NVNoremenu 1 &Buffers '&Next' '<Tab>\ or\ gb'
              \ :<C-u>call BN(v:count)<CR>
     " gB: Previous Buffer
     aunmenu Buffers.Previous
-    NVNoremenumap 1 &Buffers '&Previous' 'gB'
+    NVMap gB :<C-u>call BP(v:count)<CR>
+    NVMap <S-Tab> gB
+    NVNoremenu 1 &Buffers '&Previous' '<S-Tab>\ or\ gB'
              \ :<C-u>call BP(v:count)<CR>
     " <count>=: Select Buffer
     Noremenu 8 &Buffers '&Select' '<count>=\ or\ <count>Ctrl-^' =
