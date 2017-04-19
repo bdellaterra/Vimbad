@@ -53,6 +53,7 @@ endfunction
 " Function to delay buffer menu changes until Vim is done with initial setup
 " (Some mappings defined above)
 function s:SetBufferMenu()
+  if has('gui')
     " <Leader><Delete>b: Delete Buffer
     aunmenu Buffers.Delete
     Noremenu 4 &Buffers '&Delete' '<Leader><Delete>b'
@@ -75,6 +76,7 @@ function s:SetBufferMenu()
              \ :<C-u>call BP(v:count)<CR>
     " <count>=: Select Buffer
     Noremenu 8 &Buffers '&Select' '<count>=\ or\ <count>Ctrl-^' =
+  endif
 endfunction
 
 
