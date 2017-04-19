@@ -74,10 +74,6 @@
     path = bundle/tcomment_vim
     url = https://github.com/tomtom/tcomment_vim.git
     ignore = dirty
-[submodule "bundle/syntastic"]
-    path = bundle/syntastic
-    url = https://github.com/scrooloose/syntastic.git
-    ignore = dirty
 [submodule "bundle/vim-vexed"]
     path = bundle/vim-vexed
     url = git@bitbucket.org:bdellaterra/vim-vexed.git
