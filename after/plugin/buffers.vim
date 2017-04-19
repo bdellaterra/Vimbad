@@ -53,6 +53,12 @@ endfunction
 " Function to delay buffer menu changes until Vim is done with initial setup
 " (Some mappings defined above)
 function s:SetBufferMenu()
+  " Mappings gb: Next Buffer, gB: Previous Buffer
+  NVMap gb :<C-u>call BN(v:count)<CR>
+  NVMap <Tab> gb
+  NVMap gB :<C-u>call BP(v:count)<CR>
+  NVMap <S-Tab> gB
+  " Add menus in gui only. (After Vim populates buffer menu)
   if has('gui')
     " <Leader><Delete>b: Delete Buffer
     aunmenu Buffers.Delete
@@ -64,14 +70,10 @@ function s:SetBufferMenu()
              \ :<C-u>confirm buffer #<CR>
     " gb: Next Buffer
     aunmenu Buffers.Next
-    NVMap gb :<C-u>call BN(v:count)<CR>
-    NVMap <Tab> gb
     NVNoremenu 1 &Buffers '&Next' '<Tab>\ or\ gb'
              \ :<C-u>call BN(v:count)<CR>
     " gB: Previous Buffer
     aunmenu Buffers.Previous
-    NVMap gB :<C-u>call BP(v:count)<CR>
-    NVMap <S-Tab> gB
     NVNoremenu 1 &Buffers '&Previous' '<S-Tab>\ or\ gB'
              \ :<C-u>call BP(v:count)<CR>
     " <count>=: Select Buffer
