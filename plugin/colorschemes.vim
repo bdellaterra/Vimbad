@@ -196,8 +196,8 @@ function! DetermineColorScheme()
     " Set designated colorscheme if it exists in options
     " FIXME: and editing a normal buffer (not help, quickfix, etc.)
     let cs = get( opts, prefix . '_' . GetBG(), default_cs )
+    return cs
   endif
-  return cs
 endfunction
 
 function! SetColorScheme(...)
