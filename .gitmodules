@@ -197,3 +197,6 @@
 [submodule "bundle/vim-tmux-navigator"]
 	path = bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "bundle/vim-buftabline"]
+	path = bundle/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git
