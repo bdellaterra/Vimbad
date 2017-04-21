@@ -121,10 +121,6 @@ set backspace=indent,eol,start
 " Display most of a last line that doesn't fit in the window.
 set display=lastline
 
-" Default to opening new splits below and to the right.
-set splitbelow
-set splitright
-
 " Use undo-persistence.
 set undofile
 
