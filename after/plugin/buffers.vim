@@ -2,7 +2,7 @@
 " Description:  Brian Dellaterra's Personal Vim Configuration
 " Author:       Brian Dellaterra <github.com/bdellaterra>
 " Version:      0.1.1
-" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+" License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
 "               Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
@@ -27,14 +27,12 @@ noremap 0=  :<C-u>confirm buffer #<CR>  " Vim won't pass zero-counts to mappings
 
 " (The following borrows from menu.vim in the Vim distribution...)
 
-" When just starting Vim, load the buffer menu later
+" When just starting Vim, schedule buffer menu setup to occur later
 if has("vim_starting")
   augroup UserLoadBufferMenu
     au! VimEnter * call <SID>SetBufferMenu()
     au  VimEnter * au! UserLoadBufferMenu
   augroup END
-else
-  call <SID>SetBufferMenu()
 endif
 
 " TODO: Make these non-global
@@ -50,16 +48,17 @@ function BP( ... )
   exe "confirm bprev " . (c > 0 ? c : '')
 endfunction
 
+" Mappings gb: Next Buffer, gB: Previous Buffer
+NVMap gb :<C-u>call BN(v:count)<CR>
+NVMap <Tab> gb
+NVMap gB :<C-u>call BP(v:count)<CR>
+NVMap <S-Tab> gB
+
 " Function to delay buffer menu changes until Vim is done with initial setup
 " (Some mappings defined above)
 function s:SetBufferMenu()
-  " Mappings gb: Next Buffer, gB: Previous Buffer
-  NVMap gb :<C-u>call BN(v:count)<CR>
-  NVMap <Tab> gb
-  NVMap gB :<C-u>call BP(v:count)<CR>
-  NVMap <S-Tab> gB
   " Add menus in gui only. (After Vim populates buffer menu)
-  if has('gui')
+  if has('gui_running')
     " <Leader><Delete>b: Delete Buffer
     aunmenu Buffers.Delete
     Noremenu 4 &Buffers '&Delete' '<Leader><Delete>b'

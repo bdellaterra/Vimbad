@@ -2,7 +2,7 @@
 " Description:	Brian Dellaterra's Personal Vim Configuration
 " Author:		Brian Dellatera <github.com/bdellaterra>
 " Version:		0.1.1
-" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+" License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
 " 				Distributed under the terms of the GNU Lesser General Public License.
 "				See the file LICENSE or <http://www.gnu.org/licenses/>.
 
@@ -21,7 +21,7 @@ NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Disable' '<Leader>ds
 
 " Enhance menu options relating to colorschemes
 " (The following borrows from menu.vim in the Vim distribution...)
-if has('gui')
+if has('gui_running')
 
   " Setup the Edit.Color Scheme submenu
   let s:original_colorschemes = globpath(expand('$VIMRUNTIME'), "colors/*.vim")
