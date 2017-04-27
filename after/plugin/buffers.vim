@@ -33,7 +33,10 @@ if has("vim_starting")
     au! VimEnter * call <SID>SetBufferMenu()
     au  VimEnter * au! UserLoadBufferMenu
   augroup END
+else
+  call <SID>SetBufferMenu()
 endif
+
 
 " TODO: Make these non-global
 "
