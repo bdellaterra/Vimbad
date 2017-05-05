@@ -6,10 +6,17 @@
 " 		        Distributed under the terms of the GNU Lesser General Public License.
 "		        See the file LICENSE or <http://www.gnu.org/licenses/>.
 
+" Default colorscheme
+if has('gui_running')
+  let s:colorscheme = 'wombat'
+else
+  let s:colorscheme = '16color'
+endif
+
 " Always show status line
 set laststatus=2
 
-" Awkwardly fix glitchy Status Line after switching colorschemes
+" Fix glitchy Status Line after switching colorschemes
 autocmd FileType * call lightline#colorscheme()
 
 function! VimbadLightLineFilename()
@@ -19,7 +26,7 @@ endfunction
 
 " LightLine Configuration
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': s:colorscheme,
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
