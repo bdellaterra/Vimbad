@@ -195,11 +195,14 @@
     url = https://github.com/w0rp/ale.git
     ignore = dirty
 [submodule "bundle/vim-tmux-navigator"]
-	path = bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
+    path = bundle/vim-tmux-navigator
+    url = https://github.com/christoomey/vim-tmux-navigator.git
+    ignore = dirty
 [submodule "bundle/vim-buftabline"]
-	path = bundle/vim-buftabline
-	url = https://github.com/ap/vim-buftabline.git
+    path = bundle/vim-buftabline
+    url = https://github.com/ap/vim-buftabline.git
+    ignore = dirty
 [submodule "bundle/editorconfig-vim"]
-	path = bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
+    path = bundle/editorconfig-vim
+    url = https://github.com/editorconfig/editorconfig-vim.git
+    ignore = dirty
