@@ -1,23 +1,23 @@
-" File:			after/plugin/colorschemes.vim
-" Description:	Brian Dellaterra's Personal Vim Configuration
-" Author:		Brian Dellatera <github.com/bdellaterra>
-" Version:		0.1.1
+" File:         after/plugin/colorschemes.vim
+" Description:  Brian Dellaterra's Personal Vim Configuration
+" Author:       Brian Dellatera <github.com/bdellaterra>
+" Version:      0.1.1
 " License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
-" 				Distributed under the terms of the GNU Lesser General Public License.
-"				See the file LICENSE or <http://www.gnu.org/licenses/>.
+"               Distributed under the terms of the GNU Lesser General Public License.
+"               See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
 " <Leader>ts: Toggle Syntax Highlighting
 NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Toggle' '<Leader>ts'
-	  \ :exe exists("g:syntax_on")?'syn off':'syn enable'<CR>
+      \ :exe exists("g:syntax_on")?'syn off':'syn enable'<CR>
 
 " <Leader>es: Enable Syntax Highlighting
 NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Enable' '<Leader>es'
-         \ :syntax enable<CR>
+      \ :syntax enable<CR>
 
 " <Leader>ds: Disable Syntax Highlighting
 NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Disable' '<Leader>ds'
-         \ :syntax off<CR>
+      \ :syntax off<CR>
 
 " Enhance menu options relating to colorschemes
 " (The following borrows from menu.vim in the Vim distribution...)
