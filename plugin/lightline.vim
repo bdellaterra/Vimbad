@@ -2,15 +2,19 @@
 " Description:	Brian Dellaterra's Personal Vim Configuration
 " Author:	    Brian Dellatera <github.com/bdellaterra>
 " Version:	    0.1.1
-" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+" License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
 " 		        Distributed under the terms of the GNU Lesser General Public License.
 "		        See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 " Default colorscheme
+" Currently, wombat, solarized, powerline, jellybeans, Tomorrow,
+" Tomorrow_Night, Tomorrow_Night_Blue, Tomorrow_Night_Eighties,
+" PaperColor, seoul256, landscape, one, Dracula, darcula,
+" Molokai and 16color are available.
 if has('gui_running')
   let s:colorscheme = 'wombat'
 else
-  let s:colorscheme = '16color'
+  let s:colorscheme = 'PaperColor'
 endif
 
 " Always show status line

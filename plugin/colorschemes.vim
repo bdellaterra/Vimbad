@@ -103,7 +103,7 @@ endfunction
 
 endif  " }}}
 
-" FIXME: Encapsulate global functions
+" FIXME: Eliminate global functions
 
 function! GetDefaultFiletype()
   return exists('g:local.default_filetype') ? g:local.default_filetype : 'text'
@@ -204,7 +204,7 @@ function! SetColorScheme(...)
   let default_cs = get(g:, 'colors_name', GetDefaultCS())
   let cs = get(a:000, 0, default_cs)
   if len(expand('%')) && expand('%') !~ '^fugitive\|gitv'  " problematic plugin buffers
-    if &buftype == '' && cs != g:colors_name
+    if &buftype == '' && cs != default_cs
       colorscheme default
       if cs != 'default'
         exe 'colorscheme ' . cs
