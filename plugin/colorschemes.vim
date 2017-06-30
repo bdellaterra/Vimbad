@@ -2,7 +2,7 @@
 " Description:  Brian Dellaterra's Personal Vim Configuration
 " Author:       Brian Dellaterra <github.com/bdellaterra>
 " Version:      0.1.1
-" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+" License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
 "               Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 let s:debug = 0
@@ -184,7 +184,7 @@ function! DetermineColorScheme()
     call extend(opts, i, 'force')
   endfor
   " If filetype-specific colorschemes are enabled...
-  if get(g:local, 'filetype_colors', 0)
+  if exists('g:local') && get(g:local, 'filetype_colors', 0)
     " Assume at least a 16-color terminal
     let prefix = 'term16'
     " Detect if vim is running in gui or a better terminal
