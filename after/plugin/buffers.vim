@@ -3,6 +3,7 @@
 " Author:       Brian Dellaterra <github.com/bdellaterra>
 " Version:      0.1.1
 " License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
+"
 "               Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
@@ -62,10 +63,13 @@ NVMap <S-Tab> gB
 function s:SetBufferMenu()
   " Add menus in gui only. (After Vim populates buffer menu)
   if has('gui_running')
-    " <Leader><Delete>b: Delete Buffer
+    " <C-w>: Delete Buffer
     aunmenu Buffers.Delete
-    Noremenu 4 &Buffers '&Delete' '<Leader><Delete>b'
+    Noremenu 4 &Buffers '&Delete' '<C-w>'
              \ :<C-u>confirm bdelete<CR>
+    " <C-S-w>: Force-delete Buffer
+    Noremenumap 4 &Buffers '&Force-delete' '<C-S-w>'
+             \ :<C-u>bdelete!<CR>
     " <Ctrl-^>: Alternate Buffer
     aunmenu Buffers.Alternate
     Noremenu 5 &Buffers '&Alternate' '0=\ or\ Ctrl-^'
