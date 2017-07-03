@@ -203,5 +203,6 @@
     url = https://github.com/editorconfig/editorconfig-vim.git
     ignore = dirty
 [submodule "bundle/vim-denizen"]
-	path = bundle/vim-denizen
-	url = https://github.com/bdellaterra/vim-denizen.git
+    path = bundle/vim-denizen
+    url = https://github.com/bdellaterra/vim-denizen.git
+    ignore = dirty
