@@ -23,8 +23,8 @@ runtime! ftplugin/man.vim
 
 " USER MAPPINGS
 
-" <Leader>ht: Rebuild help tags
-NVIONoremenumap 10 &Help 'Rebuild Help &tag index' '<Leader>ht'
+" <Leader>th: Rebuild help tags
+NVIONoremenumap 10 &Help 'Rebuild Help &tag index' '<Leader>th'
 						\ :Helptags<CR> 
 
 " call g:winslow#MapEasyModeSwitch()   " Enable persistent easy mode switch

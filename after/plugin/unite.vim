@@ -2,7 +2,7 @@
 " Description:  Brian Dellaterra's Personal Vim Configuration
 " Author:       Brian Dellatera <github.com/bdellaterra>
 " Version:      0.1.1
-" License:      Copyright 2015 Brian Dellaterra. This file is part of Vimbad.
+" License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
 "               Distributed under the terms of the GNU Lesser General Public License.
 "               See the file LICENSE or <http://www.gnu.org/licenses/>.
 
@@ -32,9 +32,11 @@ NVIONoremenumap 207 &File 'Files in &Current Directory' '<Leader>uf'
 NVIONoremenumap 208 &File 'Files &Under Current Directory (recursive)' '<Leader>uu'
          \ :Unite -start-insert file_rec/async<CR>
 
-" <Leader>up: Files in Current Project
-NVIONoremenumap 208 &File 'Files in Current Project' '<Leader>up'
+" <Leader>up or <Leader>ff: Files in Current Project
+NVIONoremap <Leader>up
          \ :UniteWithProjectDir -start-insert file_rec/async<CR>
+NVIOMap <Leader>ff <Leader>up
+NVIOMenu 208 &File 'Files in Current Project' '<Leader>up' '<Leader>up'
 
 " <Leader>ub: Buffers
 NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
@@ -44,8 +46,8 @@ NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
 NVIONoremenumap 422 &Edit 'Lines Matching Last &Search' '<Leader>us'
          \ :Unite anzu<CR>
 
-" <Leader>ua: All Lines
-NVIONoremenumap 423 &Edit 'All &Lines' '<Leader>ul'
+" <Leader>uj: All Lines (mnemonic: "j" for "jump to line")
+NVIONoremenumap 423 &Edit 'All &Lines' '<Leader>uj'
          \ :Unite -start-insert line:all<CR>
 
 " <Leader>uy: Yank History (via Unite-Yank plugin)
@@ -60,7 +62,7 @@ NVIONoremenumap 322 &Tools '&Tags' '<Leader>ut'
 NVIONoremenumap 324 &Tools '&Include Tags' '<Leader>ui'
          \ :Unite tags/include<CR>
 
-" <Leader>uo: Outline (via Unite-Outlin plugin)
+" <Leader>uo: Outline (via Unite-Outline plugin)
 NVIONoremenumap 324 &Tools '&Outline' '<Leader>uo'
          \ :Unite outline<CR>
 
@@ -72,8 +74,8 @@ NVIONoremenumap 362 &Tools '&QuickFix' '<Leader>uq'
 NVIONoremenumap 364 &Tools '&Location List' '<Leader>ul'
          \ :Unite location_list<CR>
 
-" <Leader>u<F1>: Help (via Unite-Help plugin)
-NVIONoremenumap 10 &Help '&Search Help' '<Leader>u<F1>'
+" <Leader>uh: Help (via Unite-Help plugin)
+NVIONoremenumap 10 &Help '&Search Help' '<Leader>uh'
          \ :Unite help<CR>
 
 " <Leader>ucs: Colorscheme (via Unite-Colorscheme plugin)
