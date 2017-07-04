@@ -52,9 +52,9 @@ function BP( ... )
   exe "confirm bprev " . (c > 0 ? c : '')
 endfunction
 
-" Mappings q<Tab>: Delete Buffer, Q<S-Tab>: Force-delete Buffer
-NVMap q<Tab> :<C-u>confirm bdelete<CR>
-NVMap Q<S-Tab> :<C-u>bdelete!<CR>
+" Mappings <C-w>: Delete Buffer, <Leader><C-w>: Force-delete Buffer
+NVMap <C-w> :<C-u>confirm bdelete<CR>
+NVMap <Leader><C-w> :<C-u>bdelete!<CR>
 
 " Mappings gb: Next Buffer, gB: Previous Buffer
 NVMap gb :<C-u>call BN(v:count)<CR>
@@ -67,12 +67,12 @@ NVMap <S-Tab> gB
 function s:SetBufferMenu()
   " Add menus in gui only. (After Vim populates buffer menu)
   if has('gui_running')
-    " q<Tab>: Delete Buffer
+    " <C-w>: Delete Buffer
     aunmenu Buffers.Delete
-    Noremenu 4 &Buffers '&Delete' 'q<Tab>'
+    Noremenu 4 &Buffers '&Delete' '<C-w>'
              \ :<C-u>confirm bdelete<CR>
-    " Q<S-Tab>: Force-delete Buffer
-    Noremenu 4 &Buffers '&Force-delete' 'Q<S-Tab>'
+    " <Leader><C-w>: Force-delete Buffer
+    Noremenu 4 &Buffers '&Force-delete' '<Leader><C-w>'
              \ :<C-u>bdelete!<CR>
     " <Ctrl-^>: Alternate Buffer
     aunmenu Buffers.Alternate
