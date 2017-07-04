@@ -11,6 +11,8 @@
 let g:UltiSnipsSnippetsDir = '~/.vim-personal/after/UltiSnips'
 
 " Define triggers
-let g:UltiSnipsExpandTrigger        =  "<S-Enter>"
+let g:UltiSnipsExpandTrigger        =  "<C-\\>"
+
+" May not be available in terminal Vim:
 let g:UltiSnipsListSnippets         =  "<C-Enter>"
 
