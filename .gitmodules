@@ -206,3 +206,7 @@
     path = bundle/vim-denizen
     url = https://github.com/bdellaterra/vim-denizen.git
     ignore = dirty
+[submodule "bundle/vim-searchant"]
+    path = bundle/vim-searchant
+    url = https://github.com/timakro/vim-searchant.git
+    ignore = dirty
