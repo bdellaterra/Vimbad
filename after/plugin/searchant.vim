@@ -7,7 +7,12 @@
 
 
 " Highlight search result under cursor
-autocmd ColorScheme * highlight SearchCurrent ctermbg=white ctermfg=black
+function! s:CurrentSearchHighlight()
+  if &background == 'light'
+    highlight SearchCurrent ctermbg=black ctermfg=white guibg=black guifg=white
+  else
+    highlight SearchCurrent ctermbg=white ctermfg=black guibg=white guifg=black
+  endif
+endfunction
 
-
-
+autocmd ColorScheme * call <SID>CurrentSearchHighlight()
