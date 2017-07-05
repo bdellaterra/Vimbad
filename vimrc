@@ -20,8 +20,10 @@ endif
 
 " TERMINAL SETTINGS
 
-if &term =~ '^screen'
-	" tmux will send xterm-style keys when xterm-keys is on
+" Fix arrow keys
+" ref: https://unix.stackexchange.com/questions/29907/how-to-get-vim-to-work-with-tmux-properly
+" ref: https://stackoverflow.com/questions/8813855/in-vim-how-can-i-make-esc-and-arrow-keys-work-in-insert-mode
+if &term =~ '^screen' || has('Mac')
 	execute "set <xUp>=\e[1;*A"
 	execute "set <xDown>=\e[1;*B"
 	execute "set <xRight>=\e[1;*C"
