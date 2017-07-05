@@ -20,11 +20,12 @@ endif
 
 " TERMINAL SETTINGS
 
-if has('Mac')
-	set t_ku=OA
-	set t_kd=OB
-	set t_kr=OC
-	set t_kl=OD
+if &term =~ '^screen'
+	" tmux will send xterm-style keys when xterm-keys is on
+	execute "set <xUp>=\e[1;*A"
+	execute "set <xDown>=\e[1;*B"
+	execute "set <xRight>=\e[1;*C"
+	execute "set <xLeft>=\e[1;*D"
 endif
 
 
