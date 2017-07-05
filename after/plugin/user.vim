@@ -23,6 +23,10 @@ runtime! ftplugin/man.vim
 
 " USER MAPPINGS
 
+" go: Open file in default application
+Noremap go :exe (exists(':AsyncRun') ? 'AsyncRun ' : '! ')
+        \ . g:openCmd . ' <cfile>'<CR>
+
 " <Leader>th: Rebuild help tags
 NVIONoremenumap 10 &Help 'Rebuild Help &tag index' '<Leader>th'
 						\ :Helptags<CR> 
