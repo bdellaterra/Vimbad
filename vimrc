@@ -26,6 +26,14 @@ if &term =~ '^screen'
 	execute "set <xDown>=\e[1;*B"
 	execute "set <xRight>=\e[1;*C"
 	execute "set <xLeft>=\e[1;*D"
+	nnoremap <Esc>A <up>
+	nnoremap <Esc>B <down>
+	nnoremap <Esc>C <right>
+	nnoremap <Esc>D <left>
+	inoremap <Esc>A <up>
+	inoremap <Esc>B <down>
+	inoremap <Esc>C <right>
+	inoremap <Esc>D <left>
 endif
 
 
