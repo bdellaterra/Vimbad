@@ -34,6 +34,7 @@ let g:ulti_jump_forwards_res = 0
 let g:ulti_jump_backwards_res = 0
 
 " Helper functions to attempt jump and return status
+" FIXME: Make these script-local
 function! JumpForwards()
     call UltiSnips#JumpForwards()
     return g:ulti_jump_forwards_res
@@ -70,14 +71,14 @@ endfunction
 " <Tab>: Navigate forward through list, jump to next snippet location,
 "        initate completion, or insert tab(s) at start-of-line.
 inoremap <expr><Tab> <SID>JumpTabOrComplete()
-" snoremap <Tab> <Esc>:call UltiSnips#JumpForwards()<CR>
-snoremap <Tab> <C-r>=(JumpForwards() > 0)?'':"\<Tab>"
+snoremap <Tab> <Esc>:call UltiSnips#JumpForwards()<CR>
+" snoremap <Tab> <C-r>=(JumpForwards() > 0)?'':"\<Tab>"
 
 " <S-Tab>: Navigate backward through list, jump to previous snippet location,
 "          or insert tab(s) at start-of-line.
 inoremap <expr><S-Tab> <SID>JumpBackSTabOrComplete()
-" snoremap <S-Tab> <Esc>:call UltiSnips#JumpBackwards()<CR>
-snoremap <S-Tab> <C-r>=(JumpBackwards() > 0)?'':"\<S-Tab>"
+snoremap <S-Tab> <Esc>:call UltiSnips#JumpBackwards()<CR>
+" snoremap <S-Tab> <C-r>=(JumpBackwards() > 0)?'':"\<S-Tab>"
 
 " <Up> <Down> <Left> and <Right>: Same as normal except prevent
 " completions from happening as a result of cursor movement.
