@@ -18,6 +18,28 @@ if !( has('Unix') || has('Win32') )
 endif
 
 
+" TERMINAL SETTINGS
+
+if has('Mac')
+	set t_ku=OA
+	set t_kd=OB
+	set t_kr=OC
+	set t_kl=OD
+endif
+
+
+" COMMANDS
+
+" Set command to open files in default application
+if !exists('g:openCmd') 
+	if has('Unix')
+		let g:openCmd = executable('xdg-open') ? 'xdg-open' : 'open'
+	elseif has('Windows')
+		let g:openCmd = 'start'
+	endif
+endif
+
+
 " PATHS
 
 " The convention is that all directory paths will end in a slash
@@ -44,15 +66,6 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 " Have Pathogen manage bundled plugins.
 call pathogen#infect()
-
-" Set command to open files in default application
-if !exists('g:openCmd') 
-	if has('Unix')
-		let g:openCmd = executable('xdg-open') ? 'xdg-open' : 'open'
-	elseif has('Windows')
-		let g:openCmd = 'start'
-	endif
-endif
 
 " Set directory where temporary files can be stored.
 if !exists('g:TmpDir') 
