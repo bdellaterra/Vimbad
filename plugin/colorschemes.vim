@@ -125,24 +125,28 @@ function! RefreshColorscheme()
   exe "normal \<C-l>"
 endfunction
 
-autocmd BufNewFile,BufEnter * call SetDefaultFiletype()
-autocmd FileType * call SetColorScheme(DetermineColorScheme())
-autocmd ColorScheme * call SetColorScheme()
-autocmd BufWinEnter * call RefreshColorscheme()
+if exists('g:enableDynamicColorScheme') && g:enableDynamicColorScheme
+  autocmd BufNewFile,BufEnter * call SetDefaultFiletype()
+  autocmd FileType * call SetColorScheme(DetermineColorScheme())
+  autocmd ColorScheme * call SetColorScheme()
+  autocmd BufWinEnter * call RefreshColorscheme()
+endif
 
 " Build a hierarchy of colorscheme preferences based on
 " filetype-specific configurations
 function! DynamicColorScheme( opt, ... )
-  let g:cs = exists('g:cs') ? g:cs : []
-  let b:filetypes = exists('b:filetypes') ? b:filetypes : []
-  let b:filetypes += [&filetype]
-  if type(a:opt) == type({})
-    let g:cs += [a:opt]
-  elseif type(a:opt) == type(0)
-    let g:last_cs = g:cs[-len(b:filetypes)-1]
-    let g:cs += [ g:last_cs ]
+  if exists('g:enableDynamicColorScheme') && g:enableDynamicColorScheme
+    let g:cs = exists('g:cs') ? g:cs : []
+    let b:filetypes = exists('b:filetypes') ? b:filetypes : []
+    let b:filetypes += [&filetype]
+    if type(a:opt) == type({})
+      let g:cs += [a:opt]
+    elseif type(a:opt) == type(0) && exists('b:filetypes')
+      let g:last_cs = g:cs[-len(b:filetypes)-1]
+      let g:cs += [ g:last_cs ]
+    endif
+    let g:cs[-1]['&ft'] = &ft
   endif
-  let g:cs[-1]['&ft'] = &ft
 endfunction
 
 let s:default_opts = {
