@@ -17,9 +17,9 @@ function! RangeChooser(...)
       "exec 'silent !ranger --choosefile=' . shellescape(temp)
       let choosefiles = '--choosefiles=' . shellescape(temp)
       if has("gui_running")
-	    exec 'silent !xterm -e ranger ' . (strlen(path) ? path : choosefiles)
+	    exec 'silent !xterm -e ranger ' . choosefiles . ' ' . path
       else
-	    exec 'silent !ranger ' . (strlen(path) ? path : choosefiles)
+	    exec 'silent !ranger ' . choosefiles . ' ' . path
       endif
       if !filereadable(temp)
 	    redraw!
