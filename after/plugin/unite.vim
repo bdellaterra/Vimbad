@@ -36,33 +36,11 @@ NVIONoremenumap 208 &File 'Files &Under Current Directory' '<Leader>uu'
 NVIONoremap <Leader>up
          \ :UniteWithProjectDir -start-insert file_rec/async<CR>
 NVIOMap <Leader>ff <Leader>up
-NVIOMenu 208 &File 'Files in Current &Project' '<Leader>up\ or\ <Leader>ff' '<Leader>up'
+NVIOMenu 209 &File 'Files in Current &Project' '<Leader>up\ or\ <Leader>ff' '<Leader>up'
 
 " <Leader>ub: Buffers
 NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
          \ :Unite -start-insert buffer<CR>
-
-" <Leader>us: Lines Matching Last Search (via Anzu plugin)
-NVIONoremenumap 422 &Edit 'Lines Matching Last &Search' '<Leader>us'
-         \ :Unite anzu<CR>
-
-" <Leader>uj: Lines in Current Buffer (mnemonic: "j" for "jump to line")
-NVIONoremenumap 423 &Edit '&Lines in Buffer' '<Leader>uj'
-         \ :Unite -start-insert line:all<CR>
-
-" <Leader>ug: Lines Under Current Directory (recursive)
-NVIONoremenumap 208 &File 'Grep &Under Current Directory' '<Leader>ug'
-         \ :silent! Unite -start-insert grep:.<CR>
-
-" <Leader>u/ or <Leader>/: Lines in Current Project
-NVIONoremap <Leader>u/
-         \ :silent! Unite -start-insert grep/git:/<CR>
-NVIOMap <Leader>/ <Leader>u/
-NVIOMenu 208 &File '&Grep in Current &Project' '<Leader>u/\ or\ <Leader>/' '<Leader>u/'
-
-" <Leader>uy: Yank History (via Unite-Yank plugin)
-NVIONoremenumap 364 &Edit 'Paste from &Yank History' '<Leader>uy'
-         \ :Unite history/yank<CR>
 
 " <Leader>ut: Tags (via Unite-Tags plugin)
 NVIONoremenumap 322 &Tools '&Tags' '<Leader>ut'
@@ -72,9 +50,31 @@ NVIONoremenumap 322 &Tools '&Tags' '<Leader>ut'
 NVIONoremenumap 324 &Tools '&Include Tags' '<Leader>ui'
          \ :Unite tags/include<CR>
 
+" <Leader>us: Lines Matching Last Search (via Anzu plugin)
+NVIONoremenumap 421 &Edit 'Lines Matching Last &Search' '<Leader>us'
+         \ :Unite anzu<CR>
+
+" <Leader>uj: Lines in Current Buffer (mnemonic: "j" for "jump to line")
+NVIONoremenumap 422 &Edit 'Lines in &Buffer' '<Leader>uj'
+         \ :Unite -start-insert line:all<CR>
+
+" <Leader>ug: Lines Under Current Directory (recursive)
+NVIONoremenumap 423 &Edit 'Grep &Under Current Directory' '<Leader>ug'
+         \ :silent! Unite -start-insert grep:.<CR>
+
+" <Leader>u/ or <Leader>/: Lines in Current Project
+NVIONoremap <Leader>u/
+         \ :silent! Unite -start-insert grep/git:/<CR>
+NVIOMap <Leader>/ <Leader>u/
+NVIOMenu 424 &Edit 'Grep in Current &Project' '<Leader>u/\ or\ <Leader>/' '<Leader>u/'
+
 " <Leader>uo: Outline (via Unite-Outline plugin)
 NVIONoremenumap 324 &Tools '&Outline' '<Leader>uo'
          \ :Unite outline<CR>
+
+" <Leader>uy: Yank History (via Unite-Yank plugin)
+NVIONoremenumap 361 &Edit 'Paste from &Yank History' '<Leader>uy'
+         \ :Unite history/yank<CR>
 
 " <Leader>uq: QuickFix List (via Unite-QuickFix plugin)
 NVIONoremenumap 362 &Tools '&QuickFix' '<Leader>uq'
