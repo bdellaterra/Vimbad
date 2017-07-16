@@ -210,3 +210,6 @@
     path = bundle/vim-searchant
     url = https://github.com/timakro/vim-searchant.git
     ignore = dirty
+[submodule "bundle/Ranger.vim"]
+	path = bundle/Ranger.vim
+	url = https://github.com/vim-scripts/Ranger.vim.git
