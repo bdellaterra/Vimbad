@@ -29,14 +29,14 @@ NVIONoremenumap 207 &File 'Files in &Current Directory' '<Leader>uf'
          \ :Unite -start-insert file<CR>
 
 " <Leader>uu: Files Under Current Directory (recursive)
-NVIONoremenumap 208 &File 'Files &Under Current Directory (recursive)' '<Leader>uu'
+NVIONoremenumap 208 &File 'Files &Under Current Directory' '<Leader>uu'
          \ :Unite -start-insert file_rec/async<CR>
 
 " <Leader>up or <Leader>ff: Files in Current Project
 NVIONoremap <Leader>up
          \ :UniteWithProjectDir -start-insert file_rec/async<CR>
 NVIOMap <Leader>ff <Leader>up
-NVIOMenu 208 &File 'Files in Current Project' '<Leader>up' '<Leader>up'
+NVIOMenu 208 &File 'Files in Current &Project' '<Leader>up\ or\ <Leader>ff' '<Leader>up'
 
 " <Leader>ub: Buffers
 NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
@@ -46,9 +46,19 @@ NVIONoremenumap 210 &File '&Buffers' '<Leader>ub'
 NVIONoremenumap 422 &Edit 'Lines Matching Last &Search' '<Leader>us'
          \ :Unite anzu<CR>
 
-" <Leader>uj: All Lines (mnemonic: "j" for "jump to line")
-NVIONoremenumap 423 &Edit 'All &Lines' '<Leader>uj'
+" <Leader>uj: Lines in Current Buffer (mnemonic: "j" for "jump to line")
+NVIONoremenumap 423 &Edit '&Lines in Buffer' '<Leader>uj'
          \ :Unite -start-insert line:all<CR>
+
+" <Leader>ug: Lines Under Current Directory (recursive)
+NVIONoremenumap 208 &File 'Grep &Under Current Directory' '<Leader>ug'
+         \ :silent! Unite -start-insert grep:.<CR>
+
+" <Leader>u/ or <Leader>/: Lines in Current Project
+NVIONoremap <Leader>u/
+         \ :silent! Unite -start-insert grep/git:/<CR>
+NVIOMap <Leader>/ <Leader>u/
+NVIOMenu 208 &File '&Grep in Current &Project' '<Leader>u/\ or\ <Leader>/' '<Leader>u/'
 
 " <Leader>uy: Yank History (via Unite-Yank plugin)
 NVIONoremenumap 364 &Edit 'Paste from &Yank History' '<Leader>uy'
