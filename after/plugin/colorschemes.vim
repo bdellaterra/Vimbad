@@ -7,16 +7,18 @@
 "               See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
-" <Leader>ts: Toggle Syntax Highlighting
-NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Toggle' '<Leader>ts'
-      \ :exe exists("g:syntax_on")?'syn off':'syn enable'<CR>
+" <Leader>ty or <Leader>yt: Toggle Syntax Highlighting
+NVIONoremap <Leader>yt
+         \ :exe exists("g:syntax_on")?'syn off':'syn enable'<CR>
+NVIOMap <Leader>ty <Leader>yt
+NVIOMenu &Edit.Color\ Scheme.S&yntax\ Highlighting '&Toggle' '<Leader>yt\ or\ <Leader>ty' '<Leader>yt'
 
-" <Leader>es: Enable Syntax Highlighting
-NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Enable' '<Leader>es'
+" <Leader>ye: Enable Syntax Highlighting
+NVIONoremenumap &Edit.Color\ Scheme.S&yntax\ Highlighting '&Enable' '<Leader>ye'
       \ :syntax enable<CR>
 
-" <Leader>ds: Disable Syntax Highlighting
-NVIONoremenumap &Edit.Color\ Scheme.&Syntax\ Highlighting '&Disable' '<Leader>ds'
+" <Leader>yd: Disable Syntax Highlighting
+NVIONoremenumap &Edit.Color\ Scheme.S&yntax\ Highlighting '&Disable' '<Leader>yd'
       \ :syntax off<CR>
 
 " Enhance menu options relating to colorschemes
