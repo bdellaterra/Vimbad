@@ -80,7 +80,7 @@ function s:SetBufferMenu()
              \ :<C-u>confirm buffer #<CR>
     " gb: Next Buffer
     aunmenu Buffers.Next
-    NVNoremenu 1 &Buffers '&Next' '<Tab>\ or\ gb'
+    NVNoremenu 1 &Buffers '&Next' '\<Tab>\ or\ gb'
              \ :<C-u>call BN(v:count)<CR>
     " gB: Previous Buffer
     aunmenu Buffers.Previous
