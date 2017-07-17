@@ -14,7 +14,7 @@
 if has('gui_running')
   let s:colorscheme = 'wombat'
 else
-  let s:colorscheme = 'PaperColor'
+  let s:colorscheme = '16color'
 endif
 
 " Always show status line
