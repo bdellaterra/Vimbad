@@ -18,6 +18,7 @@ let s:FugitiveMaps = [
                         \ [ ':Gwrite!<CR>', '<leader>gw' ],
                         \ [ ':Gstatus<CR>', '<leader>gs' ],
                         \ [ ':Gcommit<CR>', '<leader>gc' ],
+                        \ [ ':Gcommit --amend<CR>', '<leader>ga' ],
                         \ [ ':Ggrep ', '<leader>gf' ],
                         \ [ ":Glog --graph --decorate --date=short --pretty=format:%C(yellow)%h\\ %ad%C(red)%d\\ %C(reset)%s\\ %C(blue)[%cn]<CR>", '<leader>gl' ],
                         \ [ ':Gedit ', '<leader>ge' ],
