@@ -46,19 +46,19 @@ command! -nargs=? -complete=file -bar RangerChooser call RangeChooser(<f-args>)
 " Set Ranger as file-explorer on console Vim
 if !has('gui_running')
       " <Leader>fe or <Leader>e: File Explorer
-      NVIONoremap <Leader>fe :RangerChooser<CR>
-      NVIOMap <Leader>e <Leader>fe
+      NVONoremap <Leader>fe :RangerChooser<CR>
+      NVOMap <Leader>e <Leader>fe
       " <Leader>f. or <Leader>.: File Explorer
-      NVIONoremap <Leader>f. :exe 'RangerChooser ' . fnamemodify(expand('%'), ':h')<CR>
-      NVIOMap <Leader>. <Leader>f.
+      NVONoremap <Leader>f. :exe 'RangerChooser ' . fnamemodify(expand('%'), ':h')<CR>
+      NVOMap <Leader>. <Leader>f.
 else
       " Fallback keymaps for GVim
-      NVIOMap <Leader>fe <Leader>fb
-      NVIOMap <Leader>e <Leader>fb
-      NVIONoremap <Leader>f. :exe 'VimFiler ' . fnamemodify(expand('%'), ':h')<CR>
-      NVIOMap <Leader>. <Leader>f.
+      NVOMap <Leader>fe <Leader>fb
+      NVOMap <Leader>e <Leader>fb
+      NVONoremap <Leader>f. :exe 'VimFiler ' . fnamemodify(expand('%'), ':h')<CR>
+      NVOMap <Leader>. <Leader>f.
 endif
-NVIOMenu 301 &File '&Explore Files' '<Leader>fe\ or\ <Leader>e' '<Leader>fe'
-NVIOMenu 302 &File 'Explore &Near Current File' '<Leader>f\.\ or\ <Leader>\.' '<Leader>f.'
+NVOMenu 301 &File '&Explore Files' '<Leader>fe\ or\ <Leader>e' '<Leader>fe'
+NVOMenu 302 &File 'Explore &Near Current File' '<Leader>f\.\ or\ <Leader>\.' '<Leader>f.'
 
 
