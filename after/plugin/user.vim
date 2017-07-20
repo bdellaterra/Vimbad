@@ -17,6 +17,9 @@ set encoding=utf8
 " Faster updates
 set updatetime=1000
 
+" Attempt to auto-add missing extension when navigating to files 
+set suffixesadd=.js,.jsx,.json,.html,.css,.h,.hpp,.hxx
+
 " Enable Vim as manpage viewer
 runtime! ftplugin/man.vim
 
