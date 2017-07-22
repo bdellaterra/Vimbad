@@ -1,10 +1,10 @@
-" File:			after/plugin/user.vim
+" File:		after/plugin/user.vim
 " Description:	Brian Dellaterra's Personal Vim Configuration
-" Author:		Brian Dellatera <github.com/bdellaterra>
-" Version:		0.1.1
+" Author:	Brian Dellatera <github.com/bdellaterra>
+" Version:	0.1.1
 " License:      Copyright 2015-2017 Brian Dellaterra. This file is part of Vimbad.
-" 				Distributed under the terms of the GNU Lesser General Public License.
-"				See the file LICENSE or <http://www.gnu.org/licenses/>.
+" 		Distributed under the terms of the GNU Lesser General Public License.
+"		See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 " Set the colorscheme
 " colorscheme greyman
@@ -44,8 +44,20 @@ exe "ANoremenu 10 &Help 'Toggle &Easy Mode' '"
 		\ . "' :silent! call winslow#ToggleEasyMode()<CR>"
 
 " <Leader>wd: Copy working directory to the clipboard
-NVIONoremenumap <silent> &Extra 'Copy working directory to clipboard' '<Leader>wd'
+NVIONoremenumap <silent> &Extra 'Copy working &directory to clipboard' '<Leader>wd'
 						\ :silent! let @+=fnamemodify(bufname(''),':p:h')<CR>
+
+" <Leader>wf: Copy working file to the clipboard
+NVIONoremenumap <silent> &Extra 'Copy working &file to clipboard' '<Leader>wf'
+						\ :silent! let @+=fnamemodify(bufname(''),':p')<CR>
+
+" <Leader>wp: Copy relative directory to the clipboard
+NVIONoremenumap <silent> &Extra 'Copy relative &directory to clipboard' '<Leader>wp'
+						\ :silent! let @+=fnamemodify(bufname(''),':h')<CR>
+
+" <Leader>wr: Copy relative file to the clipboard
+NVIONoremenumap <silent> &Extra 'Copy relative &file to clipboard' '<Leader>wr'
+						\ :silent! let @+=bufname('')<CR>
 
 " <Leader>ht: Toggle search pattern highlighting
 NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>th'
@@ -54,3 +66,4 @@ NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>th'
 " Make VimProc dll file
 NVIONoremenu &Extra 'Make &VimProc dll file' ''
 						\ :VimProcInstall<CR> 
+
