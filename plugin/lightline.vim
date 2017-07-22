@@ -25,7 +25,7 @@ autocmd FileType * call lightline#colorscheme()
 
 function! VimbadLightLineFilename()
   let fname = LightLineFilename()
-  return fname == '' ? '' : '(' . bufnr('') . ') ' .  LightLineFilename()
+  return fname == '' ? '' : '(' . bufnr('') . ') ' . fnamemodify(expand('%'), ":~:.")
 endfunction
 
 " LightLine Configuration
