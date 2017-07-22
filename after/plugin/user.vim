@@ -17,6 +17,9 @@ set encoding=utf8
 " Faster updates
 set updatetime=1000
 
+" Share system clipboard with unnamed register for copy/paste
+set clipboard=unnamed,unnamedplus
+
 " Attempt to auto-add missing extension when navigating to files 
 set suffixesadd=.js,.jsx,.json,.html,.css,.h,.hpp,.hxx
 
