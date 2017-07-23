@@ -16,6 +16,7 @@ let s:FugitiveMaps = [
                         \ [ ':Gcd ', '<leader>gd' ],
                         \ [ ':Gread<CR>', '<leader>grd' ],
                         \ [ ':Gwrite!<CR>', '<leader>gw' ],
+                        \ [ ':Gwrite! \| Gcommit<CR>', '<leader>gg' ],
                         \ [ ':Gstatus<CR>', '<leader>gs' ],
                         \ [ ':Gcommit<CR>', '<leader>gc' ],
                         \ [ ':Gcommit --amend<CR>', '<leader>ga' ],
@@ -30,7 +31,7 @@ let s:FugitiveMaps = [
                         \ [ ':Gremove<CR>', '<leader>grm' ],
                         \ [ ':Gblame<CR>', '<leader>gbl' ],
                         \ [ ':Gbrowse<CR>', '<leader>gbr' ],
-                        \ [ ':Gwq<CR>', '<leader>gwq' ],
+                        \ [ ':Gwq<CR>', '<leader>gq' ],
                         \ ]
 
 " Create a mapping and menu item for each entry in the dictionary.
