@@ -66,7 +66,13 @@ NVIONoremenumap 423 &Edit 'Grep &Under Current Directory' '<Leader>ug'
 NVIONoremap <Leader>u/
          \ :silent! Unite -start-insert grep/git:/<CR>
 NVIOMap <Leader>/ <Leader>u/
-NVIOMenu 424 &Edit 'Grep in Current &Project' '<Leader>u/\ or\ <Leader>/' '<Leader>u/'
+VMap <Leader>u/
+         \ y:silent! Unite -start-insert grep/git:/<CR><C-R>=substitute(escape(@", '\'), '\_s', '\\_s\\+', 'g')<CR><CR>
+VMap <Leader>/ <Leader>u/
+NIOMenu 424 &Edit 'Grep in Current &Project' '<Leader>u/\ or\ <Leader>/'
+         \ :silent! Unite -start-insert grep/git:/<CR>
+VMenu 424 &Edit 'Grep &Selection in Current &Project' '<Leader>u/\ or\ <Leader>/'
+         \ y:silent! Unite -start-insert grep/git:/<CR><C-R>=substitute(escape(@", '\'), '\_s', '\\_s\\+', 'g')<CR><CR>
 
 " <Leader>uo: Outline (via Unite-Outline plugin)
 NVIONoremenumap 324 &Tools '&Outline' '<Leader>uo'
