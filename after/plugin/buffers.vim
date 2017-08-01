@@ -39,17 +39,19 @@ else
 endif
 
 
-" TODO: Make these non-global
+" TODO: Make these non-global. SaveSession should trigger via autocmd.
 "
 " Next Buffer helper function
 function BN( ... )
   let c = get(a:000, 0, '')
   exe "confirm bnext " . (c > 0 ? c : '')
+  SaveSession
 endfunction
 " Previous Buffer helper function
 function BP( ... )
   let c = get(a:000, 0, '')
   exe "confirm bprev " . (c > 0 ? c : '')
+  SaveSession
 endfunction
 
 " Mappings <C-w>: Delete Buffer, <Leader><C-w>: Force-delete Buffer
