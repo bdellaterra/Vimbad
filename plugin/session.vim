@@ -6,8 +6,11 @@
 "               Distributed under the terms of the GNU Lesser General Public License. See the file LICENSE or <http://www.gnu.org/licenses/>.
 
 
-" Python is required if 'base64' command isn't available (Windows OS)
-if executable('base64')
+" Python is required if 'base64' command isn't available
+if exists('g:sessionEncodeCmd') && exists('g:sessionDecodeCmd')
+    let s:encodeCmd = g:sessionEncodeCmd
+    let s:decodeCmd = g:sessionDecodeCmd
+elseif executable('base64')
     let s:encodeCmd = 'base64'
     let s:decodeCmd = 'base64 -d'
 elseif executable('python')
@@ -17,11 +20,11 @@ else
     finish
 endif
 
-function! s:DefaultSessionId()
+function s:DefaultSessionId()
     return substitute(system(s:encodeCmd, getcwd()), '\_s*$', '', '')
 endfunction
 
-function! s:DefaultSessionFile()
+function s:DefaultSessionFile()
     if exists('g:activeSessionFile')
         return g:activeSessionFile
     else
@@ -29,31 +32,33 @@ function! s:DefaultSessionFile()
     endif
 endfunction
 
-function! SaveSession(...)
+function SaveSession(...)
     let sessionFile = get(a:000, 0, s:DefaultSessionFile())
+    let saveSessionOptions = &sessionoptions
+    set sessionoptions=buffers,curdir,tabpages,winsize
     exe 'mksession! ' . sessionFile
+    let &sessionoptions = saveSessionOptions
 endfunction
 
-function! RestoreSession(...)
+function RestoreSession(...)
     let sessionFile = get(a:000, 0, s:DefaultSessionFile())
     execute 'source ' . sessionFile
 endfunction
 
-function! DeleteSession(...)
+function DeleteSession(...)
     let sessionFile = get(a:000, 0, s:DefaultSessionFile())
     call delete(sessionFile)
 endfunction
 
 " Create editor commands for the functions
-command! -nargs=? SaveSession call SaveSession(<f-args>)
-command! -nargs=? RestoreSession call RestoreSession(<f-args>)
-command! -nargs=? DeleteSession call DeleteSession(<f-args>)
+command -nargs=? -complete=file SaveSession call SaveSession(<f-args>)
+command -nargs=? -complete=file RestoreSession call RestoreSession(<f-args>)
+command -nargs=? -complete=file DeleteSession call DeleteSession(<f-args>)
 
-autocmd BufAdd,BufHidden,FileType * SaveSession
-autocmd VimLeave * exists(s:DefaultSessionFile()) && SaveSession
+autocmd BufAdd,BufHidden,BufLeave,FileType * SaveSession
+autocmd VimLeave * if exists(s:DefaultSessionFile()) | SaveSession | endif
 
-" Restore default session when vim is started with no file argument(s)
-function! InitSession()
+function InitSession()
     if !argc() && filereadable(s:DefaultSessionFile())
         try
             call RestoreSession()
@@ -64,7 +69,8 @@ function! InitSession()
 endfunction
 
 " Restore default session when vim is started with no file argument(s)
-" Reload file to trigger filetype detection / syntax highlighting.
-autocmd VimEnter * call InitSession() | silent! edit! %
+autocmd VimEnter * call InitSession()
+" Use 'refresh' mapping to fix filetypes and colorscheme
+autocmd VimEnter * call feedkeys(mapleader . 'rf')
 
 
