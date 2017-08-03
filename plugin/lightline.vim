@@ -11,7 +11,9 @@
 " Tomorrow_Night, Tomorrow_Night_Blue, Tomorrow_Night_Eighties,
 " PaperColor, seoul256, landscape, one, Dracula, darcula,
 " Molokai and 16color are available.
-if has('gui_running')
+if exists('g:LighlineColorscheme')
+  let s:colorscheme = g:LighlineColorscheme
+elseif has('gui_running')
   let s:colorscheme = 'wombat'
 else
   let s:colorscheme = '16color'
