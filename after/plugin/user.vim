@@ -67,7 +67,12 @@ NVIONoremenumap <silent> &Extra 'Copy relative &file to clipboard' '<Leader>wr'
 NVIONoremenumap &Extra 'Toggle Highlighting of Search Patterns' '<Leader>th'
 						\ :set hlsearch!<CR> 
 
+" <Leader>rf: Refresh the screen
+NVIONoremenumap <silent> &Extra 'Refresh Screen' '<Leader>rf'
+						\ :windo filetype detect \| call RefreshColorscheme()<CR>
+
 " Make VimProc dll file
 NVIONoremenu &Extra 'Make &VimProc dll file' ''
 						\ :VimProcInstall<CR> 
+
 
