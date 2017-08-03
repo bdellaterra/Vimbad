@@ -16,6 +16,7 @@ function! s:UpdateCopyrightYear()
                 \ && g:local.autoupdate_copyright_year)
     if &modified && isEnabled
         silent! %s#Copyright\v\s+%(\d+([-,]))*\zs(\d+)#\=submatch(2)>=strftime('%Y')?submatch(2):(submatch(1)=='-'?'':submatch(2).(strftime('%Y')-submatch(2)>3?',':'-')).strftime('%Y')#g
+        exe "normal \<C-o>"
     endif
 endfunction
 autocmd BufWritePre * call <SID>UpdateCopyrightYear()
